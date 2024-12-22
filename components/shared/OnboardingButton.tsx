@@ -13,7 +13,7 @@ export default function OnboardingButton({ buttonText, onClick }: OnboardingButt
             className='w-[215px] rounded-[100px] bg-[#FFFFFF1A] border border-white shadow-lg p-[10px]' 
             onPress={onClick}
         >
-            <Text className='text-white text-[18px] font-bold text-center'>Next</Text>
+            <Text className='text-white text-[18px] font-bold text-center'>{buttonText}</Text>
         </TouchableOpacity>
     )
 }
