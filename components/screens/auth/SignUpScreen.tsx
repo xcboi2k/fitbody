@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { ChevronLeft } from 'lucide-react-native'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
@@ -7,7 +8,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import OnboardingButton from '@/components/shared/OnboardingButton'
 
-export default function LoginScreen() {
+export default function SignUpScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
@@ -15,17 +16,14 @@ export default function LoginScreen() {
                     <ChevronLeft size={20} color={'#E2F163'} />
                 </TouchableOpacity>
                 <Text className='text-[20px] text-limeGreen font-bold'>
-                    Login
+                    Create Account
                 </Text>
                 <ChevronLeft size={20} color={'#232323'} />
             </View>
             <ScrollView>
                 <View className='w-full px-[30px] justify-between items-center mb-[20px]'>
                     <Text className='text-[20px] text-white font-bold mb-[20px]'>
-                        Welcome
-                    </Text>
-                    <Text className='text-[14px] text-white text-center mb-[15px]'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Let's Start
                     </Text>
                 </View>
                 <View className='w-full px-[40px] py-[20px] bg-lightPurple items-center mb-[50px]'>
@@ -37,7 +35,19 @@ export default function LoginScreen() {
                             // value: formik.values.email,
                             autoCapitalize: 'none'
                         }}
-                        customLabel='Username or email'
+                        customLabel='Full name'
+                        padding='25px'
+                        marginBottom='15px'
+                    />
+                    <CustomTextInput 
+                        inputProps={{
+                            placeholder: "+123 456 78900",
+                            keyboardType: 'email-address',
+                            // onChangeText: formik.handleChange("email"),
+                            // value: formik.values.email,
+                            autoCapitalize: 'none'
+                        }}
+                        customLabel='Email or Mobile Number'
                         padding='25px'
                         marginBottom='15px'
                     />
@@ -53,16 +63,39 @@ export default function LoginScreen() {
                         padding='25px'
                         marginBottom='15px'
                     />
-                    <View className='w-full flex items-end'>
+                    <CustomTextInput 
+                        inputProps={{
+                            placeholder: "***************",
+                            keyboardType: 'email-address',
+                            // onChangeText: formik.handleChange("email"),
+                            // value: formik.values.email,
+                            autoCapitalize: 'none'
+                        }}
+                        customLabel='Confirm Password'
+                        padding='25px'
+                        marginBottom='15px'
+                    />
+                </View>
+                <View className='w-full px-[30px] items-center mb-[20px]'>
+                    <Text className='text-[12px] text-white'>
+                        By continuing, you agree to 
+                    </Text>
+                    <View className='w-full flex flex-row justify-center mb-[20px]'>
                         <TouchableOpacity>
-                            <Text className='text-[12px] text-black mb-[5px]'>
-                                Forgot Password?
+                            <Text className='text-[12px] text-limeGreen font-bold mr-[5px]'>
+                                Terms of Use
+                            </Text>
+                        </TouchableOpacity>
+                        <Text className='text-[12px] text-white mr-[5px]'>
+                            and
+                        </Text>
+                        <TouchableOpacity>
+                            <Text className='text-[12px] text-limeGreen font-bold'>
+                                Privacy Policy
                             </Text>
                         </TouchableOpacity>
                     </View>
-                </View>
-                <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <OnboardingButton buttonText='Log In' onClick={() => {}} />
+                    <OnboardingButton buttonText='Sign Up' onClick={() => {}} />
                     <Text className='text-[12px] text-white mt-[20px] mb-[10px]'>
                         or sign up with
                     </Text>
@@ -85,11 +118,11 @@ export default function LoginScreen() {
                     </View>
                     <View className='w-full flex flex-row justify-center'>
                         <Text className='text-[12px] text-white mr-[5px]'>
-                            Don't have an account?
+                            Already have an account?
                         </Text>
                         <TouchableOpacity>
                             <Text className='text-[12px] text-limeGreen'>
-                                Sign Up
+                                Log In
                             </Text>
                         </TouchableOpacity>
                     </View>
