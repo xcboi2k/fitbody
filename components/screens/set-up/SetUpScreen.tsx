@@ -19,7 +19,7 @@ export default function SetUpScreen() {
                     </Text>
                 </View>
                 <View className='w-full px-[40px] py-[20px] bg-lightPurple items-center mb-[50px]'>
-                    <Text className='text-[14px] text-white text-center mb-[15px]'>
+                    <Text className='text-[14px] text-black text-center mb-[15px]'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     </Text>
                 </View>
