@@ -16,6 +16,7 @@ import GenderScreen from './components/screens/set-up/GenderScreen';
 import AgeScreen from './components/screens/set-up/AgeScreen';
 import WeightScreen from './components/screens/set-up/WeightScreen';
 import HeightScreen from './components/screens/set-up/HeightScreen';
+import HomeScreen from './components/screens/main/HomeScreen';
 
 export default function App() {
   return (
@@ -35,8 +36,10 @@ export default function App() {
       {/* <SetUpScreen /> */}
       {/* <GenderScreen /> */}
       {/* <AgeScreen /> */}
-      <WeightScreen />
+      {/* <WeightScreen /> */}
       {/* <HeightScreen /> */}
+
+      <HomeScreen />
     </>
   );
 }
