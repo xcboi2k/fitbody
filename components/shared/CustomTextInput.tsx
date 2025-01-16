@@ -5,10 +5,13 @@ interface CustomTextInputProps {
     padding?: string;
     marginBottom?: string;
     customLabel?: string;
+    customLabelColor?: string;
     inputProps?: TextInputProps; // Assuming you want to use TextInputProps from react-native
     inputFontSize?: number;
     isPassword?: boolean;
     isSignUpPassword?: boolean;
+    isMobileNumber?: boolean;
+    measurementText?: string;
 }
 
 export default function CustomTextInput(
@@ -16,6 +19,7 @@ export default function CustomTextInput(
         padding = "25px",
         marginBottom="5px",
         customLabel,
+        customLabelColor,
         // variant,
         // isFilled = false,
         inputProps,
@@ -27,8 +31,8 @@ export default function CustomTextInput(
         // statusText,
         // statusOnPress,
         // statusOnPressText,
-        // isMobileNumber = false,
-        // isSearch = false,
+        isMobileNumber = false,
+        measurementText,
     }: CustomTextInputProps
 ) {
     const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
@@ -37,15 +41,19 @@ export default function CustomTextInput(
     };
     
     return (
-        <View className={`w-full mb-[${marginBottom}]`}>
-            <Text className='text-[14px] text-black font-bold mb-[5px]'>
+        <View className={`w-full mb-[${marginBottom}] flex-col`}>
+            <Text style={{ color: customLabelColor || '#232323' }} className="text-[14px] font-bold mb-[5px]">
                 {customLabel}
             </Text>
-            <TextInput
-                {...inputProps}
-                className={`text-${inputFontSize} rounded-[15px] bg-white px-[15px] py-[10px]`}
-                secureTextEntry={(isPassword || isSignUpPassword) && !isPasswordVisible}
-            />
+            <View className='w-full flex-row items-center bg-white rounded-[15px] bg-white px-[15px]'>
+                {isMobileNumber && <Text className="mr-2">+</Text>}
+                <TextInput
+                    {...inputProps}
+                    className={`text-${inputFontSize}`}
+                    secureTextEntry={(isPassword || isSignUpPassword) && !isPasswordVisible}
+                />
+                {measurementText && <Text className="ml-auto">{measurementText}</Text>}
+            </View>
         </View>
     )
 }

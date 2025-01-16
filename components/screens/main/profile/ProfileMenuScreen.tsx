@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native'
-
 import { ChevronLeft, ChevronRight } from 'lucide-react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -13,9 +12,9 @@ export default function ProfileMenuScreen() {
             <ScrollView>
                 <View className='w-full p-[30px] bg-lightPurple items-center mt-[50px] '>
                     <View className='flex-row w-full justify-between items-center mb-[20px]'>
-                        <TouchableOpacity className='flex-row'>
+                        <TouchableOpacity className='flex-row items-center'>
                             <ChevronLeft size={20} color={'#E2F163'} />
-                            <Text className='text-[15px] text-white ml-[5px]'>
+                            <Text className='text-[20px] font-bold text-white ml-[5px]'>
                                 My Profile
                             </Text>
                         </TouchableOpacity>
@@ -24,8 +23,8 @@ export default function ProfileMenuScreen() {
                         </Text>
                         <ChevronLeft size={20} color={'#B3A0FF'} />
                     </View>
-                    <View className="items-center justify-center mb-[15px]">
-                        <View className="w-[100px] h-[100px] rounded-full overflow-hidden border-4 border-purple-500">
+                    <View className="items-center justify-center mb-[5px]">
+                        <View className="w-[100px] h-[100px] rounded-full overflow-hidden">
                             <Image
                             source={require('@/assets/images/misc/sample-user.jpg')}
                             className="w-full h-full object-cover"
@@ -48,7 +47,7 @@ export default function ProfileMenuScreen() {
                             </Text>
                         </View>
                     </View>
-                    <View className="bg-purple w-full rounded-[10px] px-4 py-6 flex-row items-center justify-between">
+                    <View className="bg-purple w-full rounded-[10px] px-2 py-3 flex-row items-center justify-between">
                         {/* Weight */}
                         <View className="flex-1 items-center">
                             <Text className="text-white font-bold text-[15px]">75 Kg</Text>

@@ -18,6 +18,7 @@ import WeightScreen from './components/screens/set-up/WeightScreen';
 import HeightScreen from './components/screens/set-up/HeightScreen';
 import HomeScreen from './components/screens/main/HomeScreen';
 import ProfileMenuScreen from './components/screens/main/profile/ProfileMenuScreen';
+import ProfileScreen from './components/screens/main/profile/ProfileScreen';
 
 export default function App() {
   return (
@@ -41,7 +42,8 @@ export default function App() {
       {/* <HeightScreen /> */}
 
       {/* <HomeScreen /> */}
-      <ProfileMenuScreen />
+      {/* <ProfileMenuScreen /> */}
+      <ProfileScreen />
     </>
   );
 }

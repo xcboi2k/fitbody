@@ -30,7 +30,6 @@ export default function SignUpScreen() {
                     <CustomTextInput 
                         inputProps={{
                             placeholder: "example@example.com",
-                            keyboardType: 'email-address',
                             // onChangeText: formik.handleChange("email"),
                             // value: formik.values.email,
                             autoCapitalize: 'none'
