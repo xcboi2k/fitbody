@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { View, TextInput, Text, TextInputProps } from 'react-native'
+import { View, TextInput, Text, TextInputProps, TouchableOpacity } from 'react-native'
+import Entypo from '@expo/vector-icons/Entypo';
 
 interface CustomTextInputProps {
     padding?: string;
@@ -9,7 +10,6 @@ interface CustomTextInputProps {
     inputProps?: TextInputProps; // Assuming you want to use TextInputProps from react-native
     inputFontSize?: number;
     isPassword?: boolean;
-    isSignUpPassword?: boolean;
     isMobileNumber?: boolean;
     measurementText?: string;
 }
@@ -24,8 +24,7 @@ export default function CustomTextInput(
         // isFilled = false,
         inputProps,
         inputFontSize,
-        isPassword,
-        isSignUpPassword,
+        isPassword = false,
         // isLoginDisabled,
         // hasStatus = false,
         // statusText,
@@ -50,8 +49,22 @@ export default function CustomTextInput(
                 <TextInput
                     {...inputProps}
                     className={`text-${inputFontSize}`}
-                    secureTextEntry={(isPassword || isSignUpPassword) && !isPasswordVisible}
+                    secureTextEntry={isPassword && !isPasswordVisible}
                 />
+                {
+                    isPassword && 
+                        <View className='items-center ml-auto'>
+                            <TouchableOpacity onPress={togglePasswordVisibility}>
+                                {
+                                    isPasswordVisible ? (
+                                        <Entypo name="eye" size={24} color={'#B3A0FF'} />
+                                    ) : (
+                                        <Entypo name="eye-with-line" size={24} color={'#B3A0FF'} />
+                                    )
+                                }
+                            </TouchableOpacity>
+                        </View>
+                }
                 {measurementText && <Text className="ml-auto">{measurementText}</Text>}
             </View>
         </View>

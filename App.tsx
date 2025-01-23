@@ -20,6 +20,9 @@ import HomeScreen from './components/screens/main/HomeScreen';
 import ProfileMenuScreen from './components/screens/main/profile/ProfileMenuScreen';
 import ProfileScreen from './components/screens/main/profile/ProfileScreen';
 import FavoritesScreen from './components/screens/main/profile/FavoritesScreen';
+import SettingsScreen from './components/screens/main/profile/SettingsScreen';
+import NotificationSettingsScreen from './components/screens/main/profile/NotificationSettingsScreen';
+import PasswordSettingsScreen from './components/screens/main/profile/PasswordSettingsScreen';
 
 export default function App() {
   return (
@@ -45,7 +48,10 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <ProfileMenuScreen /> */}
       {/* <ProfileScreen /> */}
-      <FavoritesScreen />
+      {/* <FavoritesScreen /> */}
+      {/* <SettingsScreen /> */}
+      {/* <NotificationSettingsScreen /> */}
+      <PasswordSettingsScreen />
     </>
   );
 }

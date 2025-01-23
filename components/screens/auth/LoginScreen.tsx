@@ -50,6 +50,7 @@ export default function LoginScreen() {
                             autoCapitalize: 'none'
                         }}
                         customLabel='Password'
+                        isPassword={true}
                         padding='25px'
                         marginBottom='15px'
                     />

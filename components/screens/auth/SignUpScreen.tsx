@@ -59,6 +59,7 @@ export default function SignUpScreen() {
                             autoCapitalize: 'none'
                         }}
                         customLabel='Password'
+                        isPassword={true}
                         padding='25px'
                         marginBottom='15px'
                     />
@@ -71,6 +72,7 @@ export default function SignUpScreen() {
                             autoCapitalize: 'none'
                         }}
                         customLabel='Confirm Password'
+                        isPassword={true}
                         padding='25px'
                         marginBottom='15px'
                     />
