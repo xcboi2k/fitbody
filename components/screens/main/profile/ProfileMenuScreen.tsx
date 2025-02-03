@@ -5,8 +5,12 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import ActionSheet, { ActionSheetRef } from "react-native-actions-sheet";
 
 export default function ProfileMenuScreen() {
+    // logout
+    const actionSheetRef = useRef<ActionSheetRef>(null);
+
     return (
         <View className='flex-1 items-center bg-black'>
             <ScrollView>
@@ -124,7 +128,9 @@ export default function ProfileMenuScreen() {
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
                     </View>
-                    <View className='flex-row w-full items-center justify-between mb-[20px]'>
+                    <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
+                        onPress={() => actionSheetRef.current?.show()}
+                    >
                         <View className='flex-row w-[70%] items-center'>
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
                                 <MaterialCommunityIcons name="logout" size={24} color="white" />
@@ -134,9 +140,30 @@ export default function ProfileMenuScreen() {
                             </Text>
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
+            <ActionSheet containerStyle={{ padding: 32, borderTopLeftRadius: 30, borderTopRightRadius: 30, backgroundColor: '#B3A0FF',
+                alignItems: 'center', justifyContent: 'center', }} overlayColor='#59000000' ref={actionSheetRef}
+            >
+                <Text className='text-[18px] text-black text-center font-bold mb-[20px]'>
+                    Are you sure you want to log out?
+                </Text>
+                <View className='w-full flex-row justify-between items-center'>
+                    <TouchableOpacity 
+                        className={`w-[48%] rounded-[35px] bg-white p-[5px]`} 
+                        // onPress={() => setSelectedMode('FAQ')}
+                    >
+                        <Text className={`text-[20px] text-center text-lightPurple`}>Cancel</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        className={`w-[48%] rounded-[35px] bg-limeGreen p-[5px]`} 
+                        // onPress={() => setSelectedMode('Contact Us')}
+                    >
+                        <Text className={`text-[20px] text-center text-black`}>Yes, logout</Text>
+                    </TouchableOpacity>
+                </View>
+            </ActionSheet>
         </View>
     )
 }
