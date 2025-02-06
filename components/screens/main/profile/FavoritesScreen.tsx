@@ -56,7 +56,7 @@ export default function FavoritesScreen() {
                     <View className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
                         // key={bookmark.id}
                     >
-                        <View className="w-[50%] p-[15px] items-center justify-center">
+                        <View className="w-[50%] px-[15px] py-[5px] items-center justify-center">
                             <View className='flex-row justify-between items-start mb-[5px] w-full'>
                                 <Text className="text-black text-[16px]">Upper Body</Text>
                             </View>
@@ -86,7 +86,7 @@ export default function FavoritesScreen() {
                         <View className="w-[50%] relative">
                             <Image
                                 source={require('@/assets/images/misc/squats.png')}
-                                className="h-40 w-full rounded-[20px] p-0"
+                                className="h-[110px] w-full rounded-[20px] p-0"
                             />
                             <View className="absolute top-2 right-2">
                                 <AntDesign name="star" size={24} color="#E2F163" />
@@ -100,7 +100,7 @@ export default function FavoritesScreen() {
                     <View className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
                         // key={bookmark.id}
                     >
-                        <View className="w-[50%] p-[15px] items-center justify-center">
+                        <View className="w-[50%] px-[15px] py-[10px] items-center justify-center">
                             <View className='flex-row justify-between items-start mb-[5px] w-full'>
                                 <Text className="text-black text-[16px]">Boost Energy and Vitality</Text>
                             </View>
@@ -122,7 +122,7 @@ export default function FavoritesScreen() {
                     <View className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
                         // key={bookmark.id}
                     >
-                        <View className="w-[50%] p-[15px] items-center justify-center">
+                        <View className="w-[50%] px-[15px] py-[5px] items-center justify-center">
                             <View className='flex-row justify-between items-start mb-[5px] w-full'>
                                 <Text className="text-black text-[16px]">Upper Body</Text>
                             </View>
@@ -144,7 +144,7 @@ export default function FavoritesScreen() {
                         <View className="w-[50%] relative">
                             <Image
                                 source={require('@/assets/images/misc/squats.png')}
-                                className="h-40 w-full rounded-[20px] p-0"
+                                className="h-[110px] w-full rounded-[20px] p-0"
                             />
                             <View className="absolute top-2 right-2">
                                 <AntDesign name="star" size={24} color="#E2F163" />

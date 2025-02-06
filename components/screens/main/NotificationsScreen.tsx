@@ -107,7 +107,50 @@ export default function NotificationsScreen() {
                             </View>
                         </View>
                     ) : (
-                        null
+                        <View className='w-full flex flex-col mb-[10px] px-[30px]'>
+                            <Text className='text-[12px] text-limeGreen mb-[5px] ml-[20px]'>
+                                Today
+                            </Text>
+                            <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
+                                <View className="w-[45px] h-[45px] rounded-full bg-limeGreen items-center justify-center p-[5px] mr-[10px]">
+                                    <AntDesign name="star" size={30} color="black" />
+                                </View>
+                                <View className='flex-col w-[70%]'>
+                                    <Text className='text-[13px] text-black font-bold'>
+                                        You Have a New Message! 
+                                    </Text>
+                                    <Text className='text-[13px] text-lightPurple'>
+                                        June 10 - 2:00 pM
+                                    </Text>
+                                </View>
+                            </View>
+                            <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
+                                <View className="w-[45px] h-[45px] rounded-full bg-limeGreen items-center justify-center p-[5px] mr-[10px]">
+                                    <Ionicons name="document-text" size={30} color="black" />
+                                </View>
+                                <View className='flex-col w-[70%]'>
+                                    <Text className='text-[13px] text-black font-bold'>
+                                        Scheduled Maintenance
+                                    </Text>
+                                    <Text className='text-[13px] text-lightPurple'>
+                                        June 10 - 8:00 AM
+                                    </Text>
+                                </View>
+                            </View>
+                            <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
+                                <View className="w-[45px] h-[45px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[10px]">
+                                    <MaterialIcons name="notifications" size={30} color="white" />
+                                </View>
+                                <View className='flex-col w-[70%]'>
+                                    <Text className='text-[13px] text-black font-bold'>
+                                        We've Detected a Login From a New Device
+                                    </Text>
+                                    <Text className='text-[13px] text-lightPurple'>
+                                        June 10 - 5:00 aM
+                                    </Text>
+                                </View>
+                            </View>
+                        </View>
                     )
                 }
             </ScrollView>
