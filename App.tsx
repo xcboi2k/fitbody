@@ -10,6 +10,7 @@ import SearchScreen from './components/screens/main/SearchScreen';
 import HomeScreen from './components/screens/main/HomeScreen';
 import FavoritesScreen from './components/screens/main/profile/FavoritesScreen';
 import WorkoutScreen from './components/screens/main/workout/WorkoutScreen';
+import BeginnerScreen from './components/screens/main/workout/BeginnerScreen';
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <NotificationsScreen /> */}
       {/* <SearchScreen /> */}
-      <WorkoutScreen />
+      {/* <WorkoutScreen /> */}
+      <BeginnerScreen />
     </>
   );
 }
