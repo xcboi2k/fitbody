@@ -11,6 +11,7 @@ import HomeScreen from './components/screens/main/HomeScreen';
 import FavoritesScreen from './components/screens/main/profile/FavoritesScreen';
 import WorkoutScreen from './components/screens/main/workout/WorkoutScreen';
 import BeginnerScreen from './components/screens/main/workout/BeginnerScreen';
+import BeginnerRoutineScreen from './components/screens/main/workout/BeginnerRoutineScreen';
 
 export default function App() {
   return (
@@ -23,7 +24,8 @@ export default function App() {
       {/* <NotificationsScreen /> */}
       {/* <SearchScreen /> */}
       {/* <WorkoutScreen /> */}
-      <BeginnerScreen />
+      {/* <BeginnerScreen /> */}
+      <BeginnerRoutineScreen />
     </>
   );
 }

@@ -13,6 +13,7 @@
     "expo": "~52.0.19",
     "expo-dev-client": "~5.0.7",
     "expo-status-bar": "~2.0.0",
+    "expo-video": "~2.0.5",
     "lucide-react-native": "^0.468.0",
     "nativewind": "^4.1.23",
     "react": "18.3.1",
@@ -28,6 +29,7 @@
     "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
     "@types/react-native": "^0.72.8",
+    "@types/react-native-video-player": "^0.10.7",
     "typescript": "^5.3.3"
   },
   "private": true

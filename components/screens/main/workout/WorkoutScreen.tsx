@@ -77,7 +77,7 @@ export default function WorkoutScreen() {
                                                     </View>
 
                                                     <View className="flex-row items-center">
-                                                        <MaterialCommunityIcons name="clock-time-eight" size={15} color='white' />
+                                                        <MaterialCommunityIcons name="fire" size={15} color='white' />
                                                         <Text className="text-white text-[12px] ml-1">1450 Kcal</Text>
                                                     </View>
 
