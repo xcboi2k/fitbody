@@ -7,14 +7,14 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-export default function BeginnerScreen() {
+export default function IntermediateScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
                 <TouchableOpacity className='flex-row items-center'>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
-                        Beginner
+                        Intermediate
                     </Text>
                 </TouchableOpacity>
                 <View className='w-[30%] flex-row justify-around items-center'>
@@ -34,7 +34,7 @@ export default function BeginnerScreen() {
                                 className="w-full h-[140px] object-cover"
                             />
                             <View className="absolute top-2 right-2 bg-limeGreen px-3 py-1 rounded-full">
-                                <Text className="text-black text-[12px] font-bold">Functional Training</Text>
+                                <Text className="text-black text-[12px] font-bold">Cardio Fitness</Text>
                             </View>
                         </View>
 
@@ -56,7 +56,7 @@ export default function BeginnerScreen() {
 
                                         <View className="flex-row items-center">
                                             <FontAwesome5 name="walking" size={15} color="white" />
-                                            <Text className="text-white text-[12px] ml-1">Beginner</Text>
+                                            <Text className="text-white text-[12px] ml-1">Intermediate</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -76,7 +76,7 @@ export default function BeginnerScreen() {
                         </View>
                         <View className='flex-col w-[50%]'>
                             <Text className='text-[13px] text-black font-bold'>
-                                Dumbbell Rows
+                                Kettlebell Swing
                             </Text>
                             <View className="flex-row items-center">
                                 <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
@@ -96,7 +96,7 @@ export default function BeginnerScreen() {
                         </View>
                         <View className='flex-col w-[50%]'>
                             <Text className='text-[13px] text-black font-bold'>
-                                Russian Twists
+                                Shoulder Press
                             </Text>
                             <View className="flex-row items-center">
                                 <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
@@ -116,7 +116,7 @@ export default function BeginnerScreen() {
                         </View>
                         <View className='flex-col w-[50%]'>
                             <Text className='text-[13px] text-black font-bold'>
-                                Squats
+                                Hamstring Curls
                             </Text>
                             <View className="flex-row items-center">
                                 <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
@@ -140,7 +140,7 @@ export default function BeginnerScreen() {
                         </View>
                         <View className='flex-col w-[50%]'>
                             <Text className='text-[13px] text-black font-bold'>
-                                Tabata Intervals
+                                Bicep Curls
                             </Text>
                             <View className="flex-row items-center">
                                 <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
@@ -160,7 +160,7 @@ export default function BeginnerScreen() {
                         </View>
                         <View className='flex-col w-[50%]'>
                             <Text className='text-[13px] text-black font-bold'>
-                                Bicycle Crunches
+                                Barbell Deadlift
                             </Text>
                             <View className="flex-row items-center">
                                 <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />

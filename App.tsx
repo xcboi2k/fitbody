@@ -12,6 +12,10 @@ import FavoritesScreen from './components/screens/main/profile/FavoritesScreen';
 import WorkoutScreen from './components/screens/main/workout/WorkoutScreen';
 import BeginnerScreen from './components/screens/main/workout/BeginnerScreen';
 import BeginnerRoutineScreen from './components/screens/main/workout/BeginnerRoutineScreen';
+import IntermediateScreen from './components/screens/main/workout/IntermediateScreen';
+import IntermediateRoutineScreen from './components/screens/main/workout/IntermediateRoutineScreen';
+import AdvancedScreen from './components/screens/main/workout/AdvancedScreen';
+import AdvancedRoutineScreen from './components/screens/main/workout/AdvancedRoutineScreen';
 
 export default function App() {
   return (
@@ -25,7 +29,11 @@ export default function App() {
       {/* <SearchScreen /> */}
       {/* <WorkoutScreen /> */}
       {/* <BeginnerScreen /> */}
-      <BeginnerRoutineScreen />
+      {/* <BeginnerRoutineScreen /> */}
+      <IntermediateScreen />
+      {/* <IntermediateRoutineScreen />
+      <AdvancedScreen />
+      <AdvancedRoutineScreen /> */}
     </>
   );
 }
