@@ -16,6 +16,9 @@ import IntermediateScreen from './components/screens/main/workout/IntermediateSc
 import IntermediateRoutineScreen from './components/screens/main/workout/IntermediateRoutineScreen';
 import AdvancedScreen from './components/screens/main/workout/AdvancedScreen';
 import AdvancedRoutineScreen from './components/screens/main/workout/AdvancedRoutineScreen';
+import CreateYourRoutineScreen from './components/screens/main/workout/CreateYourRoutineScreen';
+import YourRoutineScreen from './components/screens/main/workout/YourRoutineScreen';
+import YourRoutineDetailsScreen from './components/screens/main/workout/YourRoutineDetailsScreen';
 
 export default function App() {
   return (
@@ -30,10 +33,13 @@ export default function App() {
       {/* <WorkoutScreen /> */}
       {/* <BeginnerScreen /> */}
       {/* <BeginnerRoutineScreen /> */}
-      <IntermediateScreen />
-      {/* <IntermediateRoutineScreen />
-      <AdvancedScreen />
-      <AdvancedRoutineScreen /> */}
+      {/* <IntermediateScreen /> */}
+      {/* <IntermediateRoutineScreen /> */}
+      {/* <AdvancedScreen /> */}
+      {/* <AdvancedRoutineScreen /> */}
+      {/* <CreateYourRoutineScreen /> */}
+      {/* <YourRoutineScreen /> */}
+      {/* <YourRoutineDetailsScreen /> */}
     </>
   );
 }
