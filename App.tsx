@@ -19,6 +19,7 @@ import AdvancedRoutineScreen from './components/screens/main/workout/AdvancedRou
 import CreateYourRoutineScreen from './components/screens/main/workout/CreateYourRoutineScreen';
 import YourRoutineScreen from './components/screens/main/workout/YourRoutineScreen';
 import YourRoutineDetailsScreen from './components/screens/main/workout/YourRoutineDetailsScreen';
+import ProgressTrackingScreen from './components/screens/main/ProgressTrackingScreen';
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
       {/* <CreateYourRoutineScreen /> */}
       {/* <YourRoutineScreen /> */}
       {/* <YourRoutineDetailsScreen /> */}
+      <ProgressTrackingScreen />
     </>
   );
 }
