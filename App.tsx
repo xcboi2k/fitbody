@@ -20,6 +20,10 @@ import CreateYourRoutineScreen from './components/screens/main/workout/CreateYou
 import YourRoutineScreen from './components/screens/main/workout/YourRoutineScreen';
 import YourRoutineDetailsScreen from './components/screens/main/workout/YourRoutineDetailsScreen';
 import ProgressTrackingScreen from './components/screens/main/ProgressTrackingScreen';
+import NutritionScreen from './components/screens/main/nutrition/NutritionScreen';
+import MealPlansMainScreen from './components/screens/main/nutrition/meal-plans/MealPlansMainScreen';
+import MealPlansQuestionnaireAScreen from './components/screens/main/nutrition/meal-plans/MealPlansQuestionnaireAScreen';
+import MealPlansQuestionnaireBScreen from './components/screens/main/nutrition/meal-plans/MealPlansQuestionnaireBScreen';
 
 export default function App() {
   return (
@@ -41,7 +45,11 @@ export default function App() {
       {/* <CreateYourRoutineScreen /> */}
       {/* <YourRoutineScreen /> */}
       {/* <YourRoutineDetailsScreen /> */}
-      <ProgressTrackingScreen />
+      {/* <ProgressTrackingScreen /> */}
+      {/* <NutritionScreen /> */}
+      {/* <MealPlansMainScreen /> */}
+      {/* <MealPlansQuestionnaireAScreen /> */}
+      <MealPlansQuestionnaireBScreen />
     </>
   );
 }
