@@ -24,6 +24,8 @@ import NutritionScreen from './components/screens/main/nutrition/NutritionScreen
 import MealPlansMainScreen from './components/screens/main/nutrition/meal-plans/MealPlansMainScreen';
 import MealPlansQuestionnaireAScreen from './components/screens/main/nutrition/meal-plans/MealPlansQuestionnaireAScreen';
 import MealPlansQuestionnaireBScreen from './components/screens/main/nutrition/meal-plans/MealPlansQuestionnaireBScreen';
+import MealPlansResultsScreen from './components/screens/main/nutrition/meal-plans/MealPlansResultsScreen';
+import MealPlansLoadingScreen from './components/screens/main/nutrition/meal-plans/MealPlansLoadingScreen';
 
 export default function App() {
   return (
@@ -49,7 +51,9 @@ export default function App() {
       {/* <NutritionScreen /> */}
       {/* <MealPlansMainScreen /> */}
       {/* <MealPlansQuestionnaireAScreen /> */}
-      <MealPlansQuestionnaireBScreen />
+      {/* <MealPlansQuestionnaireBScreen /> */}
+      <MealPlansLoadingScreen />
+      {/* <MealPlansResultsScreen /> */}
     </>
   );
 }
