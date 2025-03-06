@@ -6,7 +6,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { ChevronLeft } from 'lucide-react-native';
 import OnboardingButton from '@/components/shared/OnboardingButton'
 
-export default function MealPlansMainScreen() {
+export default function MealIdeasMainScreen() {
     return (
         <ImageBackground source={require('@/assets/images/misc/food-1.jpg')} style={{ flex: 1 }} resizeMode="cover">
             <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'black', opacity: 0.5 }} />
@@ -26,7 +26,7 @@ export default function MealPlansMainScreen() {
                 <View className='w-full p-[30px] bg-lightPurple items-center mb-[20px]'>
                     <View className='w-full flex-row items-center justify-center mb-[15px]'>
                         <Image source={require('@/assets/icons/nutrition-icon.png')} style={{ width: '20%', height: undefined, aspectRatio: 2}} resizeMode="contain" />
-                        <Text className='text-white text-[20px] font-bold text-center'>Meal Plans</Text>
+                        <Text className='text-white text-[20px] font-bold text-center'>Meal Ideas</Text>
                     </View>
                     
                     <View className='w-full flex-row items-center justify-center'>
@@ -35,8 +35,9 @@ export default function MealPlansMainScreen() {
                         </Text>
                     </View>
                 </View>
-                <OnboardingButton buttonText='Know Your Plan' onClick={() => {}}/>
+                <OnboardingButton buttonText='Discover' onClick={() => {}}/>
             </View>
         </ImageBackground>
     )
 }
+

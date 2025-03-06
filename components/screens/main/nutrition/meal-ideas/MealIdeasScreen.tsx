@@ -7,8 +7,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-export default function NutritionScreen() {
-    const [selected, setSelected] = useState('Meal Plans');
+export default function MealIdeasScreen() {
+    const [selected, setSelected] = useState('Breakfast');
 
     return (
         <View className='flex-1 items-center bg-black'>
@@ -16,7 +16,7 @@ export default function NutritionScreen() {
                 <TouchableOpacity className='flex-row items-center'>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
-                        Nutrition
+                        Meal Ideas
                     </Text>
                 </TouchableOpacity>
                 <View className='w-[30%] flex-row justify-around items-center'>
@@ -29,16 +29,22 @@ export default function NutritionScreen() {
             <ScrollView className='w-full mb-[15px]'>
                 <View className='w-full flex-row justify-between items-center mb-[20px] px-[30px]'>
                     <TouchableOpacity 
-                        className={`w-[48%] rounded-[25px] ${selected === 'Meal Plans' ? 'bg-limeGreen' : 'bg-white'} px-[12px] py-[8px]`} 
-                        onPress={() => setSelected('Meal Plans')}
+                        className={`w-[32%] rounded-[35px] ${selected === 'Breakfast' ? 'bg-limeGreen' : 'bg-white'} p-[5px]`} 
+                        onPress={() => setSelected('Breakfast')}
                     >
-                        <Text className={`text-[20px] text-center ${selected === 'Meal Plans' ? 'text-black' : 'text-lightPurple'}`}>Meal Plans</Text>
+                        <Text className={`text-[17px] text-center ${selected === 'Breakfast' ? 'text-black' : 'text-lightPurple'}`}>Breakfast</Text>
                     </TouchableOpacity>
                     <TouchableOpacity 
-                        className={`w-[48%] rounded-[25px] ${selected === 'Meal Ideas' ? 'bg-limeGreen' : 'bg-white'} px-[12px] py-[8px]`} 
-                        // onPress={() => setSelected('Meal Ideas')}
+                        className={`w-[32%] rounded-[35px] ${selected === 'Lunch' ? 'bg-limeGreen' : 'bg-white'} p-[5px]`} 
+                        onPress={() => setSelected('Lunch')}
                     >
-                        <Text className={`text-[20px] text-center ${selected === 'Meal Ideas' ? 'text-black' : 'text-lightPurple'}`}>Meal Ideas</Text>
+                        <Text className={`text-[17px] text-center ${selected === 'Lunch' ? 'text-black' : 'text-lightPurple'}`}>Lunch</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        className={`w-[32%] rounded-[35px] ${selected === 'Dinner' ? 'bg-limeGreen' : 'bg-white'} p-[5px]`} 
+                        onPress={() => setSelected('Dinner')}
+                    >
+                        <Text className={`text-[17px] text-center ${selected === 'Dinner' ? 'text-black' : 'text-lightPurple'}`}>Dinner</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -47,7 +53,7 @@ export default function NutritionScreen() {
                         {/* Workout Image */}
                         <View className="relative">
                             <Image
-                                source={require('../../../../assets/images/misc/plank.png')} // Replace with your actual image
+                                source={require('@/assets/images/misc/plank.png')} // Replace with your actual image
                                 className="w-full h-[140px] object-cover"
                             />
                             <View className="absolute top-2 right-2 bg-limeGreen px-3 py-1 rounded-full">
@@ -60,7 +66,7 @@ export default function NutritionScreen() {
                             {/* Stats Row */}
                             <View className='w-full flex flex-row items-center'>
                                 <View className='w-[80%] flex-col'>
-                                    <Text className="text-limeGreen text-[14px] font-bold mb-[5px]">Carrot and Orange Smoothie</Text>
+                                    <Text className="text-limeGreen text-[14px] font-bold mb-[5px]">Spinach and Tomato Omelette</Text>
                                     <View className="w-full flex-row items-center">
                                         <View className="flex-row items-center mr-[10px]">
                                             <MaterialCommunityIcons name="clock-time-eight" size={12} color='white' />
@@ -69,7 +75,7 @@ export default function NutritionScreen() {
 
                                         <View className="flex-row items-center">
                                             <MaterialCommunityIcons name="fire" size={15} color='white' />
-                                            <Text className="text-white text-[12px] ml-1">70 Kcal</Text>
+                                            <Text className="text-white text-[12px] ml-1">220 Kcal</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -132,19 +138,19 @@ export default function NutritionScreen() {
                             </View>
                             <View className="mt-4">
                                 <View className='flex-row justify-between items-start mb-[10px] w-full'>
-                                    <Text className="text-limeGreen text-[16px]">Salads with Quinoa</Text>
+                                    <Text className="text-limeGreen text-[16px]">Green Celery Juice</Text>
                                 </View>
                                 <View className="flex-row items-center justify-between">
                                     <View className="flex-row items-center">
                                         <MaterialCommunityIcons name="clock-time-eight" size={20} color='#B3A0FF' />
                                         <Text className="text-white text-[10px] ml-[2px]">
-                                            30 Minutes
+                                            12 Minutes
                                         </Text>
                                     </View>
                                     <View className="flex-row items-center">
                                         <MaterialCommunityIcons name="fire" size={24} color='#B3A0FF' />
                                         <Text className="text-white text-[10px] ml-[2px]">
-                                            350 Cal
+                                            120 Cal
                                         </Text>
                                     </View>
                                 </View>

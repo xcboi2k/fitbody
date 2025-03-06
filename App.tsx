@@ -26,6 +26,10 @@ import MealPlansQuestionnaireAScreen from './components/screens/main/nutrition/m
 import MealPlansQuestionnaireBScreen from './components/screens/main/nutrition/meal-plans/MealPlansQuestionnaireBScreen';
 import MealPlansResultsScreen from './components/screens/main/nutrition/meal-plans/MealPlansResultsScreen';
 import MealPlansLoadingScreen from './components/screens/main/nutrition/meal-plans/MealPlansLoadingScreen';
+import MealPlansRecipeScreen from './components/screens/main/nutrition/meal-plans/MealPlansRecipeScreen';
+import MealIdeasMainScreen from './components/screens/main/nutrition/meal-ideas/MealIdeasMainScreen';
+import MealIdeasScreen from './components/screens/main/nutrition/meal-ideas/MealIdeasScreen';
+import MealIdeasDetailsScreen from './components/screens/main/nutrition/meal-ideas/MealIdeasDetailsScreen';
 
 export default function App() {
   return (
@@ -52,8 +56,12 @@ export default function App() {
       {/* <MealPlansMainScreen /> */}
       {/* <MealPlansQuestionnaireAScreen /> */}
       {/* <MealPlansQuestionnaireBScreen /> */}
-      <MealPlansLoadingScreen />
+      {/* <MealPlansLoadingScreen /> */}
       {/* <MealPlansResultsScreen /> */}
+      {/* <MealPlansRecipeScreen /> */}
+      {/* <MealIdeasMainScreen /> */}
+      {/* <MealIdeasScreen /> */}
+      <MealIdeasDetailsScreen />
     </>
   );
 }
