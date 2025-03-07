@@ -3,12 +3,6 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import "./global.css"
 
-import HelpScreen from './components/screens/main/profile/HelpScreen';
-import ProfileMenuScreen from './components/screens/main/profile/ProfileMenuScreen';
-import NotificationsScreen from './components/screens/main/NotificationsScreen';
-import SearchScreen from './components/screens/main/SearchScreen';
-import HomeScreen from './components/screens/main/HomeScreen';
-import FavoritesScreen from './components/screens/main/profile/FavoritesScreen';
 import WorkoutScreen from './components/screens/main/workout/WorkoutScreen';
 import BeginnerScreen from './components/screens/main/workout/BeginnerScreen';
 import BeginnerRoutineScreen from './components/screens/main/workout/BeginnerRoutineScreen';
@@ -30,17 +24,15 @@ import MealPlansRecipeScreen from './components/screens/main/nutrition/meal-plan
 import MealIdeasMainScreen from './components/screens/main/nutrition/meal-ideas/MealIdeasMainScreen';
 import MealIdeasScreen from './components/screens/main/nutrition/meal-ideas/MealIdeasScreen';
 import MealIdeasDetailsScreen from './components/screens/main/nutrition/meal-ideas/MealIdeasDetailsScreen';
+import CommunityMainScreen from './components/screens/main/community/CommunityMainScreen';
+import CommunityDiscussionForumScreen from './components/screens/main/community/CommunityDiscussionForumScreen';
+import ChallengesMainScreen from './components/screens/main/community/challenges/ChallengesMainScreen';
+import WeeklyChallengesScreen from './components/screens/main/community/challenges/WeeklyChallengesScreen';
 
 export default function App() {
   return (
     <>
       <StatusBar/>
-      {/* <FavoritesScreen /> */}
-      {/* <HelpScreen /> */}
-      {/* <ProfileMenuScreen /> */}
-      {/* <HomeScreen /> */}
-      {/* <NotificationsScreen /> */}
-      {/* <SearchScreen /> */}
       {/* <WorkoutScreen /> */}
       {/* <BeginnerScreen /> */}
       {/* <BeginnerRoutineScreen /> */}
@@ -61,7 +53,11 @@ export default function App() {
       {/* <MealPlansRecipeScreen /> */}
       {/* <MealIdeasMainScreen /> */}
       {/* <MealIdeasScreen /> */}
-      <MealIdeasDetailsScreen />
+      {/* <MealIdeasDetailsScreen /> */}
+      {/* <CommunityMainScreen /> */}
+      {/* <CommunityDiscussionForumScreen /> */}
+      {/* <ChallengesMainScreen /> */}
+      <WeeklyChallengesScreen />
     </>
   );
 }

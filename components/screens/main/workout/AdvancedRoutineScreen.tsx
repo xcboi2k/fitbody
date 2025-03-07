@@ -26,7 +26,7 @@ export default function AdvancedRoutineScreen() {
                 <TouchableOpacity className='flex-row items-center'>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
-                        Intermediate
+                        Advanced
                     </Text>
                 </TouchableOpacity>
                 <View className='w-[30%] flex-row justify-around items-center'>
