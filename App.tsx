@@ -28,6 +28,10 @@ import CommunityMainScreen from './components/screens/main/community/CommunityMa
 import CommunityDiscussionForumScreen from './components/screens/main/community/CommunityDiscussionForumScreen';
 import ChallengesMainScreen from './components/screens/main/community/challenges/ChallengesMainScreen';
 import WeeklyChallengesScreen from './components/screens/main/community/challenges/WeeklyChallengesScreen';
+import WeeklyChallengeDetailScreen from './components/screens/main/community/challenges/WeeklyChallengeDetailScreen';
+import RecommendationsMainScreen from './components/screens/main/recommendations/RecommendationsMainScreen';
+import RecommendationDetailScreen from './components/screens/main/recommendations/RecommendationDetailScreen';
+import WeeklyChallengeSuccessScreen from './components/screens/main/community/challenges/WeeklyChallengeSuccessScreen';
 
 export default function App() {
   return (
@@ -57,7 +61,11 @@ export default function App() {
       {/* <CommunityMainScreen /> */}
       {/* <CommunityDiscussionForumScreen /> */}
       {/* <ChallengesMainScreen /> */}
-      <WeeklyChallengesScreen />
+      {/* <WeeklyChallengesScreen /> */}
+      {/* <WeeklyChallengeDetailScreen /> */}
+      {/* <RecommendationsMainScreen /> */}
+      {/* <RecommendationDetailScreen /> */}
+      <WeeklyChallengeSuccessScreen />
     </>
   );
 }
