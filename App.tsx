@@ -32,6 +32,9 @@ import WeeklyChallengeDetailScreen from './components/screens/main/community/cha
 import RecommendationsMainScreen from './components/screens/main/recommendations/RecommendationsMainScreen';
 import RecommendationDetailScreen from './components/screens/main/recommendations/RecommendationDetailScreen';
 import WeeklyChallengeSuccessScreen from './components/screens/main/community/challenges/WeeklyChallengeSuccessScreen';
+import ResourcesMainScreen from './components/screens/main/resources/ResourcesMainScreen';
+import ResourcesDetailsScreen from './components/screens/main/resources/ResourcesDetailsScreen';
+import SupportChatScreen from './components/screens/main/profile/SupportChatScreen';
 
 export default function App() {
   return (
@@ -65,7 +68,10 @@ export default function App() {
       {/* <WeeklyChallengeDetailScreen /> */}
       {/* <RecommendationsMainScreen /> */}
       {/* <RecommendationDetailScreen /> */}
-      <WeeklyChallengeSuccessScreen />
+      {/* <WeeklyChallengeSuccessScreen /> */}
+      {/* <ResourcesMainScreen /> */}
+      {/* <ResourcesDetailsScreen /> */}
+      <SupportChatScreen />
     </>
   );
 }
