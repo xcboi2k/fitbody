@@ -65,7 +65,7 @@ export default function WeightScreen() {
                         max={240}
                         step={1}
                         fractionDigits={0}
-                        initialValue={165}
+                        initialValue={0}
                         indicatorColor='#E2F163'
                         onValueChange={(number) => console.log(number)}
                         onValueChangeEnd={(number) => console.log(number)}

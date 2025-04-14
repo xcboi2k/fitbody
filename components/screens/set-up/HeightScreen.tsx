@@ -24,7 +24,6 @@ export default function HeightScreen() {
             });
         }
     }, [selectedHeight]);
-    
 
     return (
         <View className='flex-1 items-center bg-black'>
@@ -65,7 +64,7 @@ export default function HeightScreen() {
                         max={240}
                         step={1}
                         fractionDigits={0}
-                        initialValue={165}
+                        initialValue={0}
                         indicatorColor='#E2F163'
                         onValueChange={(number) => console.log(number)}
                         onValueChangeEnd={(number) => console.log(number)}
