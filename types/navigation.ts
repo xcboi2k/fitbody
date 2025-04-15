@@ -1,4 +1,10 @@
 export type RootStackParamList = {
+    //onboarding
+    Onboarding1: undefined;
+    Onboarding2: undefined;
+    Onboarding3: undefined;
+    Onboarding4: undefined;
+
     //auth
     Login: undefined;
     SignUp: undefined;
@@ -15,4 +21,33 @@ export type RootStackParamList = {
     SetGoal: undefined;
     SetActivityLevel: undefined;
     SetProfile: undefined;
+
+    //dashboard
+    HomeMain: undefined;
+    Search: undefined;
+    Notifications: undefined;
+
+    ProfileMenu: undefined;
+    Profile: undefined;
+    Favorites: undefined;
+    Settings: undefined;
+    NotificationSettings: undefined;
+    PasswordSettings: undefined;
+    Help: undefined;
+    SupportChat: undefined;
+
+    Workout: undefined;
+    WorkoutBeginnerMain: undefined;
+    WorkoutBeginnerRoutine: undefined;
+    WorkoutIntermediateMain: undefined;
+    WorkoutIntermediateRoutine: undefined;
+    WorkoutAdvancedMain: undefined;
+    WorkoutAdvancedRoutine: undefined;
+    WorkoutCreateYourRoutine: undefined;
+    WorkoutYourRoutine: undefined;
+    WorkoutYourRoutineDetails: undefined;
+    
+    ProgressTracking: undefined;
+    Nutrition: undefined;
+    Community: undefined;
 };
