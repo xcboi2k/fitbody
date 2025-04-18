@@ -48,6 +48,28 @@ export type RootStackParamList = {
     WorkoutYourRoutineDetails: undefined;
     
     ProgressTracking: undefined;
+
     Nutrition: undefined;
+    MealPlansMain: undefined;
+    MealPlansQuestionnaireA: undefined;
+    MealPlansQuestionnaireB: undefined;
+    MealPlansLoading: undefined;
+    MealPlansResults: undefined;
+    MealPlansRecipe: undefined;
+    MealIdeasMain: undefined;
+    MealIdeasList: undefined;
+    MealIdeasDetails: undefined;
+
     Community: undefined;
+    CommunityDiscussion: undefined;
+    ChallengesMain: undefined;
+    WeeklyChallenges: undefined;
+    WeeklyChallengeDetails: undefined;
+    WeeklyChallengeSuccess: undefined;
+
+    RecommendationsMain: undefined;
+    RecommendationsDetails: undefined;
+
+    ResourcesMain: undefined;
+    ResourcesDetails: undefined;
 };

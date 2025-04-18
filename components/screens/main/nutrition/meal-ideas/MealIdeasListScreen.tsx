@@ -7,7 +7,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-export default function MealIdeasScreen() {
+export default function MealIdeasListScreen() {
     const [selected, setSelected] = useState('Breakfast');
 
     return (
