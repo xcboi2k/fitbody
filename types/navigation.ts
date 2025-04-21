@@ -72,4 +72,24 @@ export type RootStackParamList = {
 
     ResourcesMain: undefined;
     ResourcesDetails: undefined;
+
+    //resources tab
+    ResourcesTabMain: undefined;
+    ResourcesTabWorkoutVideosList: undefined;
+    ResourcesTabWorkoutVideosDetails: undefined;
+    ResourcesTabArticlesDetails: undefined;
+
+    //favorites tab
+    FavoritesTabMain: undefined;
+
+    //help tab
+    HelpTabMain: undefined;
+    HelpTabDetails: undefined;
+    HelpTabSupport: undefined;
+
+    //tabs
+    HomeTab: undefined;
+    ResourcesTab: undefined;
+    FavoritesTab: undefined;
+    HelpTab: undefined;
 };

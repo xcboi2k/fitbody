@@ -44,7 +44,7 @@ import ResourcesMainScreen from '../screens/main/resources/ResourcesMainScreen';
 import ResourcesDetailsScreen from '../screens/main/resources/ResourcesDetailsScreen';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const AuthNavigator = () => {
+const DashboardNavigator = () => {
     return (
         <Stack.Navigator
                 screenOptions={{
@@ -107,4 +107,4 @@ const AuthNavigator = () => {
     )
 }
 
-export default AuthNavigator
+export default DashboardNavigator
