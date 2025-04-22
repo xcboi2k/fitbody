@@ -7,7 +7,7 @@ import Onboarding3Screen from '../screens/onboarding/Onboarding3Screen';
 import Onboarding4Screen from '../screens/onboarding/Onboarding4Screen';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const AuthNavigator = () => {
+const OnboardingNavigator = () => {
     return (
         <Stack.Navigator
                 screenOptions={{
@@ -24,4 +24,4 @@ const AuthNavigator = () => {
     )
 }
 
-export default AuthNavigator
+export default OnboardingNavigator

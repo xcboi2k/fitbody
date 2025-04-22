@@ -7,13 +7,13 @@ import SupportChatScreen from './components/screens/main/profile/SupportChatScre
 import HeightScreen from './components/screens/set-up/HeightScreen';
 import GoalScreen from './components/screens/set-up/GoalScreen';
 import ActivityLevelScreen from './components/screens/set-up/ActivityLevelScreen';
+import MainApp from './components/MainApp';
 
 export default function App() {
   return (
     <>
       <StatusBar/>
-      {/* <GoalScreen /> */}
-      <ActivityLevelScreen />
+      <MainApp />
     </>
   );
 }
