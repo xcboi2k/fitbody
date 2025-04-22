@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native'
-import { ChevronLeft } from 'lucide-react-native'
+import { ChevronLeft, Pencil } from 'lucide-react-native'
 
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import CustomTextInput from '@/components/shared/CustomTextInput'
+import ButtonText from '@/components/shared/ButtonText'
 
 export default function SetProfileScreen() {
     return (
@@ -23,7 +25,7 @@ export default function SetProfileScreen() {
             <ScrollView>
                 <View className='w-full px-[30px] justify-between items-center mb-[20px]'>
                     <Text className='text-[25px] text-white font-bold mb-[20px]'>
-                        Physical Activity Level
+                        Fill Your Profile
                     </Text>
                 </View>
                 <View className='w-full px-[40px] py-[20px] items-center mb-[30px]'>
@@ -31,11 +33,74 @@ export default function SetProfileScreen() {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     </Text>
                 </View>
-                <View className='w-full px-[30px] py-[20px] items-center mb-[50px]'>
-                    
+                <View className='w-full px-[30px] py-[20px] items-center bg-lightPurple mb-[30px]'>
+                    <View className="items-center justify-center mb-[5px] relative">
+                        <View className="w-[150px] h-[150px] rounded-full overflow-hidden">
+                            <Image
+                            source={require('@/assets/images/misc/sample-user.jpg')}
+                            className="w-full h-full object-cover"
+                            />
+                        </View>
+                        <TouchableOpacity className="absolute bottom-0 right-0 w-[30px] h-[30px] rounded-full bg-limeGreen items-center justify-center">
+                            <Pencil size={18} color={'black'} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View className='w-full px-[30px] py-[20px] items-center mb-[30px]'>
+                    <CustomTextInput 
+                        inputProps={{
+                            placeholder: "full name",
+                            // onChangeText: formik.handleChange("email"),
+                            // value: formik.values.email,
+                            autoCapitalize: 'none'
+                        }}
+                        customLabel='Full name'
+                        customLabelColor={'#B3A0FF'}
+                        padding='25px'
+                        marginBottom='15px'
+                    />
+                    <CustomTextInput 
+                        inputProps={{
+                            placeholder: "nickname",
+                            // onChangeText: formik.handleChange("email"),
+                            // value: formik.values.email,
+                            autoCapitalize: 'none'
+                        }}
+                        customLabel='Full name'
+                        customLabelColor={'#B3A0FF'}
+                        padding='25px'
+                        marginBottom='15px'
+                    />
+                    <CustomTextInput 
+                        inputProps={{
+                            placeholder: "example@example.com",
+                            keyboardType: 'email-address',
+                            // onChangeText: formik.handleChange("email"),
+                            // value: formik.values.email,
+                            autoCapitalize: 'none'
+                        }}
+                        customLabel='Email'
+                        customLabelColor={'#B3A0FF'}
+                        padding='25px'
+                        marginBottom='15px'
+                    />
+                    <CustomTextInput 
+                        inputProps={{
+                            placeholder: "123 456 78900",
+                            keyboardType: 'numeric',
+                            // onChangeText: formik.handleChange("email"),
+                            // value: formik.values.email,
+                            autoCapitalize: 'none'
+                        }}
+                        customLabel='Mobile Number'
+                        customLabelColor={'#B3A0FF'}
+                        padding='25px'
+                        marginBottom='15px'
+                        isMobileNumber={true}
+                    />
                 </View>
                 <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <OnboardingButton buttonText='Continue' onClick={() => {}} />
+                    <ButtonText buttonText='Start' onClick={() => {}}/>
                 </View>
             </ScrollView>
         </View>

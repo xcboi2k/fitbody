@@ -8,6 +8,8 @@ import HeightScreen from './components/screens/set-up/HeightScreen';
 import GoalScreen from './components/screens/set-up/GoalScreen';
 import ActivityLevelScreen from './components/screens/set-up/ActivityLevelScreen';
 import MainApp from './components/MainApp';
+import SetProfileScreen from './components/screens/set-up/SetProfileScreen';
+import HelpDetailsScreen from './components/screens/main/profile/HelpDetailsScreen';
 
 export default function App() {
   return (

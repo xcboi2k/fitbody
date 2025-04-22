@@ -21,6 +21,35 @@ export default function HelpDetailsScreen() {
                 </Text>
                 <ChevronLeft size={20} color={'#232323'} />
             </View>
+            <View className='w-full flex flex-col items-center mb-[10px] px-[30px]'>
+                <View className='w-full flex-row justify-center items-center mb-[15px]'>
+                    <Text className={`text-[20px] text-center text-white`}>How Can We Help You?</Text>
+                </View>
+            </View>
+            <View className='w-full flex-col items-center mb-[30px] px-[30px] mt-[10px]'>
+                <View className='flex-row w-full items-center justify-between border-t border-b border-[#E2F163]'>
+                    <View className='flex-col w-[70%] py-[30px]'>
+                        <Text className='text-[18px] text-white'>
+                            How can we help you?
+                        </Text>
+                        <Text className='text-[14px] text-white'>
+                            Support
+                        </Text>
+                    </View>
+                    <FontAwesome5 name="caret-down" size={24} color='#E2F163' />
+                </View>
+                <View className='flex-row w-full items-center justify-between border-b border-[#E2F163]'>
+                    <View className='flex-col w-[70%] py-[30px]'>
+                        <Text className='text-[18px] text-white'>
+                            Help Center
+                        </Text>
+                        <Text className='text-[14px] text-white'>
+                            General Information
+                        </Text>
+                    </View>
+                    <FontAwesome5 name="caret-down" size={24} color='#E2F163' />
+                </View>
+            </View>
         </View>
     )
 }
