@@ -8,8 +8,9 @@ import AuthenticatedNavigator from './navigators/AuthenticatedNavigator';
 import UserStore from '@/stores/UserStore';
 import OnboardingNavigator from './navigators/OnboardingNavigator';
 import SetUpNavigator from './navigators/SetUpNavigator';
+import { NestedParamList } from '@/types/navigation';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<NestedParamList>();
 export default function MainApp() {
     const navTheme = {
         ...DefaultTheme,

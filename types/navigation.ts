@@ -1,3 +1,5 @@
+import { NavigatorScreenParams } from '@react-navigation/native';
+
 export type RootStackParamList = {
     //onboarding
     Onboarding1: undefined;
@@ -92,4 +94,14 @@ export type RootStackParamList = {
     ResourcesTab: undefined;
     FavoritesTab: undefined;
     HelpTab: undefined;
+
+    
 };
+
+export type NestedParamList = {
+    //nested navigators
+    AuthenticatedScreens: NavigatorScreenParams<RootStackParamList>;
+    Auth: NavigatorScreenParams<RootStackParamList>;
+    Onboarding: NavigatorScreenParams<RootStackParamList>;
+    SetUp: NavigatorScreenParams<RootStackParamList>;
+}

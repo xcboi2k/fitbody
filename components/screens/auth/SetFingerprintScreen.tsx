@@ -4,15 +4,19 @@ import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from
 import { ChevronLeft } from 'lucide-react-native'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function SetFingerprintScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Auth', {screen: 'SignUp'})}>
                     <ChevronLeft size={20} color={'#E2F163'} />
                 </TouchableOpacity>
                 <Text className='text-[20px] text-limeGreen font-bold'>

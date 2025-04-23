@@ -1,9 +1,15 @@
 import React from 'react'
 import { View, Text, ImageBackground, Image } from 'react-native'
 import { Play } from 'lucide-react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function Onboarding4Screen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     return (
         <ImageBackground source={require('@/assets/images/onboarding/onboarding-image-4.png')} 
             style={{ flex: 1 }} resizeMode="stretch">
@@ -18,7 +24,7 @@ export default function Onboarding4Screen() {
                         <View className='w-[20px] h-[4px] rounded-[12px] bg-white'/>
                     </View>
                 </View>
-                <OnboardingButton buttonText='Get Started' onClick={() => {}}/>
+                <OnboardingButton buttonText='Get Started' onClick={() => navigation.navigate('Auth', { screen: 'Login' })}/>
             </View>
         </ImageBackground>
     )

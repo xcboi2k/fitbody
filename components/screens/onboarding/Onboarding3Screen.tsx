@@ -1,9 +1,15 @@
 import React from 'react'
 import { View, Text, ImageBackground, Image } from 'react-native'
 import { Play } from 'lucide-react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function Onboarding3Screen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     return (
         <ImageBackground source={require('@/assets/images/onboarding/onboarding-image-3.png')} 
             style={{ flex: 1 }} resizeMode="stretch">
@@ -18,9 +24,9 @@ export default function Onboarding3Screen() {
                         <View className='w-[20px] h-[4px] rounded-[12px] bg-purple'/>
                     </View>
                 </View>
-                <OnboardingButton buttonText='Next' onClick={() => {}}/>
+                <OnboardingButton buttonText='Next' onClick={() => navigation.navigate('Onboarding', { screen: 'Onboarding4' })}/>
                 <View className='absolute top-[40px] right-[20px] flex-row items-center'>
-                    <Text className='text-[12px] text-limeGreen mr-[5px]' onPress={() => { /* Handle skip action */ }}>
+                    <Text className='text-[12px] text-limeGreen mr-[5px]' onPress={() => navigation.navigate('Auth', { screen: 'Login' })}>
                         Skip
                     </Text>
                     <Play size={15} color={'#E2F163'}/>

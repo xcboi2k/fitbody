@@ -3,15 +3,19 @@ import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from
 import { ChevronLeft } from 'lucide-react-native'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function LoginScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Onboarding', {screen: 'Onboarding4'})}>
                     <ChevronLeft size={20} color={'#E2F163'} />
                 </TouchableOpacity>
                 <Text className='text-[20px] text-limeGreen font-bold'>
@@ -55,7 +59,7 @@ export default function LoginScreen() {
                         marginBottom='15px'
                     />
                     <View className='w-full flex items-end'>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Auth', {screen: 'ForgotPassword'})}>
                             <Text className='text-[12px] text-black mb-[5px]'>
                                 Forgot Password?
                             </Text>
@@ -65,7 +69,7 @@ export default function LoginScreen() {
                 <View className='w-full px-[30px] items-center mb-[20px]'>
                     <OnboardingButton buttonText='Log In' onClick={() => {}} />
                     <Text className='text-[12px] text-white mt-[20px] mb-[10px]'>
-                        or sign up with
+                        or sign in with
                     </Text>
                     <View className='w-full flex flex-row mb-[40px] justify-center'>
                         <TouchableOpacity>
@@ -88,7 +92,7 @@ export default function LoginScreen() {
                         <Text className='text-[12px] text-white mr-[5px]'>
                             Don't have an account?
                         </Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Auth', {screen: 'SignUp'})}>
                             <Text className='text-[12px] text-limeGreen'>
                                 Sign Up
                             </Text>
