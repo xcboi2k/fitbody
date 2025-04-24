@@ -34,7 +34,7 @@ export default function SetFingerprintScreen() {
                     <Entypo name="fingerprint" size={250} color='white'/>
                 </View>
                 <View className='w-full px-[30px] items-center mb-[10px]'>
-                    <OnboardingButton buttonText='Skip' onClick={() => {}} />
+                    <OnboardingButton buttonText='Skip' onClick={() => navigation.navigate('SetUp', {screen: 'SetUpMain'})} />
                 </View>
                 <View className='w-full px-[30px] items-center mb-[10px]'>
                     <OnboardingButton buttonText='Continue' onClick={() => {}} />

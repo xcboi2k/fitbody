@@ -3,11 +3,16 @@ import React, { useState, useRef, useEffect } from 'react'
 import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { ChevronLeft, ChevronUp } from 'lucide-react-native'
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function AgeScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     const age = [26, 27, 28, 29, 30]; // Example dates
     const [selectedAge, setSelectedAge] = useState<number>(28); // Set default to last date
     const scrollViewRef = useRef<ScrollView>(null); // Create a ref for the ScrollView
@@ -27,7 +32,7 @@ export default function AgeScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
-                <TouchableOpacity className='flex-row'>
+                <TouchableOpacity className='flex-row' onPress={() => navigation.navigate('SetUp', {screen: 'SetGender'})}>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[15px] text-limeGreen ml-[5px]'>
                         Back
@@ -97,7 +102,7 @@ export default function AgeScreen() {
                 </View>
                 
                 <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <OnboardingButton buttonText='Continue' onClick={() => {}} />
+                    <OnboardingButton buttonText='Continue' onClick={() => navigation.navigate('SetUp', {screen: 'SetWeight'})} />
                 </View>
             </ScrollView>
         </View>

@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
-
 import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { ChevronLeft } from 'lucide-react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function GoalScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     const goal = [
         { label: 'Lose Weight', value: 'Lose Weight' },
         { label: 'Gain Weight', value: 'Gain Weight' },
@@ -18,7 +22,7 @@ export default function GoalScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
-                <TouchableOpacity className='flex-row'>
+                <TouchableOpacity className='flex-row' onPress={() => navigation.navigate('SetUp', {screen: 'SetHeight'})}>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[15px] text-limeGreen ml-[5px]'>
                         Back
@@ -61,7 +65,7 @@ export default function GoalScreen() {
                     }
                 </View>
                 <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <OnboardingButton buttonText='Continue' onClick={() => {}} />
+                    <OnboardingButton buttonText='Continue' onClick={() => navigation.navigate('SetUp', {screen: 'SetActivityLevel'})} />
                 </View>
             </ScrollView>
         </View>

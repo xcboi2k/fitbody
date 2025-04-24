@@ -1,17 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
-
 import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { ChevronLeft, Pencil } from 'lucide-react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import OnboardingButton from '@/components/shared/OnboardingButton'
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import ButtonText from '@/components/shared/ButtonText'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
+import UserStore from '@/stores/UserStore';
 
 export default function SetProfileScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+    
+    const setLoggedIn = UserStore((state) => state.setLoggedIn)
+
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
-                <TouchableOpacity className='flex-row'>
+                <TouchableOpacity className='flex-row' onPress={() => navigation.navigate('SetUp', {screen: 'SetActivityLevel'})}>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[15px] text-limeGreen ml-[5px]'>
                         Back
@@ -100,7 +107,7 @@ export default function SetProfileScreen() {
                     />
                 </View>
                 <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <ButtonText buttonText='Start' onClick={() => {}}/>
+                    <ButtonText buttonText='Start' onClick={() => setLoggedIn()}/>
                 </View>
             </ScrollView>
         </View>

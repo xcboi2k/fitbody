@@ -4,11 +4,15 @@ import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from
 import { ChevronLeft } from 'lucide-react-native'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function SetUpScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     return (
         <View className='flex-1 items-center bg-black'>
             <Image source={require('@/assets/images/setup/setup-image-1.png')} style={{ height: '60%', width: '100%' }} resizeMode="stretch" />
@@ -24,7 +28,7 @@ export default function SetUpScreen() {
                     </Text>
                 </View>
                 <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <OnboardingButton buttonText='Next' onClick={() => {}} />
+                    <OnboardingButton buttonText='Next' onClick={() => navigation.navigate('SetUp', {screen: 'SetGender'})} />
                 </View>
             </ScrollView>
         </View>

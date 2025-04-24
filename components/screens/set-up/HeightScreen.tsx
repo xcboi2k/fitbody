@@ -4,11 +4,16 @@ import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from
 import { ChevronLeft } from 'lucide-react-native'
 import { RulerPicker } from 'react-native-ruler-picker';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import OnboardingButton from '@/components/shared/OnboardingButton'
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function HeightScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     const height = [150, 155, 160, 165, 170]; // Example dates
     const [selectedHeight, setSelectedHeight] = useState<number>(160); // Set default to last date
     const scrollViewRef = useRef<ScrollView>(null); // Create a ref for the ScrollView
@@ -28,7 +33,7 @@ export default function HeightScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[50px]'>
-                <TouchableOpacity className='flex-row'>
+                <TouchableOpacity className='flex-row' onPress={() => navigation.navigate('SetUp', {screen: 'SetWeight'})}>
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[15px] text-limeGreen ml-[5px]'>
                         Back
@@ -75,7 +80,7 @@ export default function HeightScreen() {
                     />
                 </View>
                 <View className='w-full px-[30px] items-center mb-[20px]'>
-                    <OnboardingButton buttonText='Continue' onClick={() => {}} />
+                    <OnboardingButton buttonText='Continue' onClick={() => navigation.navigate('SetUp', {screen: 'SetGoal'})} />
                 </View>
             </ScrollView>
         </View>
