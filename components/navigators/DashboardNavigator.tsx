@@ -10,6 +10,7 @@ import FavoritesScreen from '../screens/main/profile/FavoritesScreen';
 import SettingsScreen from '../screens/main/profile/SettingsScreen';
 import PasswordSettingsScreen from '../screens/main/profile/PasswordSettingsScreen';
 import HelpScreen from '../screens/main/profile/HelpScreen';
+import HelpDetailsScreen from '../screens/main/profile/HelpDetailsScreen';
 import SupportChatScreen from '../screens/main/profile/SupportChatScreen';
 import WorkoutScreen from '../screens/main/workout/WorkoutScreen';
 import BeginnerScreen from '../screens/main/workout/BeginnerScreen';
@@ -42,6 +43,7 @@ import RecommendationsMainScreen from '../screens/main/recommendations/Recommend
 import RecommendationDetailScreen from '../screens/main/recommendations/RecommendationDetailScreen';
 import ResourcesMainScreen from '../screens/main/resources/ResourcesMainScreen';
 import ResourcesDetailsScreen from '../screens/main/resources/ResourcesDetailsScreen';
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const DashboardNavigator = () => {
@@ -65,7 +67,8 @@ const DashboardNavigator = () => {
                 <Stack.Screen name="NotificationSettings" component={NotificationsScreen}/>
                 <Stack.Screen name="PasswordSettings" component={PasswordSettingsScreen}/>
                 <Stack.Screen name="Help" component={HelpScreen}/>
-                <Stack.Screen name="SupportChat" component={SupportChatScreen}/>
+                <Stack.Screen name="HelpDetails" component={HelpDetailsScreen}/>
+                <Stack.Screen name="HelpSupportChat" component={SupportChatScreen}/>
 
                 <Stack.Screen name="Workout" component={WorkoutScreen}/>
                 <Stack.Screen name="WorkoutBeginnerMain" component={BeginnerScreen}/>

@@ -36,7 +36,8 @@ export type RootStackParamList = {
     NotificationSettings: undefined;
     PasswordSettings: undefined;
     Help: undefined;
-    SupportChat: undefined;
+    HelpDetails: undefined;
+    HelpSupportChat: undefined;
 
     Workout: undefined;
     WorkoutBeginnerMain: undefined;
@@ -100,8 +101,13 @@ export type RootStackParamList = {
 
 export type NestedParamList = {
     //nested navigators
-    AuthenticatedScreens: NavigatorScreenParams<RootStackParamList>;
+    AuthenticatedScreens: NavigatorScreenParams<AuthenticatedStackParamList>;
     Auth: NavigatorScreenParams<RootStackParamList>;
     Onboarding: NavigatorScreenParams<RootStackParamList>;
     SetUp: NavigatorScreenParams<RootStackParamList>;
 }
+
+export type AuthenticatedStackParamList = {
+    AppScreens: undefined;
+    User: NavigatorScreenParams<RootStackParamList>;
+};

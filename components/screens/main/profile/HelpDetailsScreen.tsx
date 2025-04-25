@@ -5,12 +5,24 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function HelpDetailsScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[15px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'Help',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         type of help
@@ -27,7 +39,14 @@ export default function HelpDetailsScreen() {
                 </View>
             </View>
             <View className='w-full flex-col items-center mb-[30px] px-[30px] mt-[10px]'>
-                <View className='flex-row w-full items-center justify-between border-t border-b border-[#E2F163]'>
+                <TouchableOpacity className='flex-row w-full items-center justify-between border-t border-b border-[#E2F163]'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'HelpSupportChat',
+                        },
+                    })}
+                >
                     <View className='flex-col w-[70%] py-[30px]'>
                         <Text className='text-[18px] text-white'>
                             How can we help you?
@@ -37,7 +56,7 @@ export default function HelpDetailsScreen() {
                         </Text>
                     </View>
                     <FontAwesome5 name="caret-down" size={24} color='#E2F163' />
-                </View>
+                </TouchableOpacity>
                 <View className='flex-row w-full items-center justify-between border-b border-[#E2F163]'>
                     <View className='flex-col w-[70%] py-[30px]'>
                         <Text className='text-[18px] text-white'>

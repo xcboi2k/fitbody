@@ -2,8 +2,14 @@ import { View, Text, TextInput, TouchableOpacity, ScrollView, Platform, Keyboard
 import { AntDesign, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { ChevronLeft } from 'lucide-react-native';
 import { useRef } from 'react';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function SupportChatScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     const messages = [
         { id: 1, text: "Hello!", time: "09:00 AM", sender: "user" },
         { id: 2, text: "How can I help you today?", time: "09:00 AM", sender: "assistant" },
@@ -24,7 +30,14 @@ export default function SupportChatScreen() {
             <View className='flex-1 items-center bg-black'>
                 {/* Header */}
                 <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                    <TouchableOpacity className='flex-row items-center'>
+                    <TouchableOpacity className='flex-row items-center'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'HelpDetails',
+                            },
+                        })}
+                    >
                         <Ionicons name="chevron-back" size={20} color={'#E2F163'} />
                         <View className="flex-row items-center ml-[5px]">
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[10px]">

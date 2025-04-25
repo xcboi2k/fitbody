@@ -6,8 +6,13 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import ActionSheet, { ActionSheetRef } from "react-native-actions-sheet";
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function ProfileMenuScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     // logout
     const actionSheetRef = useRef<ActionSheetRef>(null);
 
@@ -16,7 +21,14 @@ export default function ProfileMenuScreen() {
             <ScrollView>
                 <View className='w-full p-[30px] bg-lightPurple items-center mt-[50px] '>
                     <View className='flex-row w-full justify-between items-center mb-[20px]'>
-                        <TouchableOpacity className='flex-row items-center'>
+                        <TouchableOpacity className='flex-row items-center' 
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'HomeMain',
+                                },
+                            })}
+                        >
                             <ChevronLeft size={20} color={'#E2F163'} />
                             <Text className='text-[20px] font-bold text-white ml-[5px]'>
                                 My Profile
@@ -73,7 +85,14 @@ export default function ProfileMenuScreen() {
                 </View>
                 
                 <View className='w-full p-[30px] items-center mb-[20px]'>
-                    <View className='flex-row w-full items-center justify-between mb-[20px]'>
+                    <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'Profile',
+                            },
+                        })}
+                    >
                         <View className='flex-row w-[70%] items-center'>
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
                                 <FontAwesome name="user" size={24} color='white' />
@@ -83,8 +102,15 @@ export default function ProfileMenuScreen() {
                             </Text>
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
-                    </View>
-                    <View className='flex-row w-full items-center justify-between mb-[20px]'>
+                    </TouchableOpacity>
+                    <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'Favorites',
+                            },
+                        })}
+                    >
                         <View className='flex-row w-[70%] items-center'>
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
                                 <AntDesign name="star" size={24} color="white" />
@@ -94,7 +120,7 @@ export default function ProfileMenuScreen() {
                             </Text>
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
-                    </View>
+                    </TouchableOpacity>
                     <View className='flex-row w-full items-center justify-between mb-[20px]'>
                         <View className='flex-row w-[70%] items-center'>
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
@@ -106,7 +132,14 @@ export default function ProfileMenuScreen() {
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
                     </View>
-                    <View className='flex-row w-full items-center justify-between mb-[20px]'>
+                    <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'Settings',
+                            },
+                        })}
+                    >
                         <View className='flex-row w-[70%] items-center'>
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
                                 <FontAwesome name="cog" size={24} color="white" />
@@ -116,8 +149,15 @@ export default function ProfileMenuScreen() {
                             </Text>
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
-                    </View>
-                    <View className='flex-row w-full items-center justify-between mb-[20px]'>
+                    </TouchableOpacity>
+                    <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'Help',
+                            },
+                        })}
+                    >
                         <View className='flex-row w-[70%] items-center'>
                             <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
                                 <MaterialIcons name="support-agent" size={24} color="white" />
@@ -127,7 +167,7 @@ export default function ProfileMenuScreen() {
                             </Text>
                         </View>
                         <ChevronRight size={20} color={'#E2F163'} />
-                    </View>
+                    </TouchableOpacity>
                     <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
                         onPress={() => actionSheetRef.current?.show()}
                     >

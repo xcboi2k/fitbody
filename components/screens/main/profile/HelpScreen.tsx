@@ -5,8 +5,13 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function HelpScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const [selectedMode, setSelectedMode] = useState('FAQ');
     const [selectedFAQCategory, setSelectedFAQCategory] = useState('General');
 
@@ -15,7 +20,14 @@ export default function HelpScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[15px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'Settings',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Help & FAQs
@@ -138,7 +150,14 @@ export default function HelpScreen() {
                     </> 
                 ) : (
                     <View className='w-full flex-col items-center mb-[30px] px-[30px] mt-[10px]'>
-                        <View className='flex-row w-full items-center justify-between mb-[20px]'>
+                        <TouchableOpacity className='flex-row w-full items-center justify-between mb-[20px]'
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'HelpDetails',
+                                },
+                            })}
+                        >
                             <View className='flex-row w-[70%] items-center'>
                                 <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">
                                     <AntDesign name="customerservice" size={24} color="white" />
@@ -148,7 +167,7 @@ export default function HelpScreen() {
                                 </Text>
                             </View>
                             <FontAwesome5 name="caret-down" size={24} color='#E2F163' />
-                        </View>
+                        </TouchableOpacity>
                         <View className='flex-row w-full items-center justify-between mb-[20px]'>
                             <View className='flex-row w-[70%] items-center'>
                                 <View className="w-[40px] h-[40px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[20px]">

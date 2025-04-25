@@ -3,14 +3,26 @@ import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from
 import { ChevronLeft, ChevronRight, Pencil } from 'lucide-react-native'
 import CustomTextInput from '@/components/shared/CustomTextInput'
 import ButtonText from '@/components/shared/ButtonText'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function ProfileScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     return (
         <View className='flex-1 items-center bg-black'>
             <ScrollView>
                 <View className='w-full p-[30px] bg-lightPurple items-center mt-[50px] '>
                     <View className='flex-row w-full justify-between items-center mb-[20px]'>
-                        <TouchableOpacity className='flex-row items-center'>
+                        <TouchableOpacity className='flex-row items-center'
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'ProfileMenu',
+                                },
+                            })}
+                        >
                             <ChevronLeft size={20} color={'#E2F163'} />
                             <Text className='text-[20px] font-bold text-white ml-[5px]'>
                                 My Profile

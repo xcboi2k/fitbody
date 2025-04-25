@@ -7,25 +7,29 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
+
+import ScreenHeader from '@/components/shared/ScreenHeader';
 
 export default function FavoritesScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const [selected, setSelected] = useState('All');
 
     return (
         <View className='flex-1 items-center bg-black'>
-            <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[15px]'>
-                <TouchableOpacity className='flex-row items-center'>
-                    <ChevronLeft size={20} color={'#E2F163'} />
-                    <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
-                        Favorites
-                    </Text>
-                </TouchableOpacity>
-                <View className='w-[30%] flex-row justify-between items-center'>
-                    <FontAwesome name="search" size={23} color='#B3A0FF' />
-                    <MaterialIcons name="notifications" size={25} color='#B3A0FF' />
-                    <FontAwesome name="user" size={24} color='#B3A0FF' />
-                </View>
-            </View>
+            <ScreenHeader title='Favorites' 
+                backPress={
+                    () => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'ProfileMenu',
+                        },
+                    })
+                }
+            />
             <View className='w-full flex-row justify-between items-center mb-[30px] px-[30px]'>
                 <Text className='text-[12px] text-limeGreen ml-[5px]'>
                     Sort By

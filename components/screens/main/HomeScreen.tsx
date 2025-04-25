@@ -22,13 +22,31 @@ export default function HomeScreen() {
                     Hi, User
                 </Text>
                 <View className='w-[30%] flex-row justify-between items-center'>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'Search',
+                            },
+                        })}
+                    >
                         <FontAwesome name="search" size={23} color='#B3A0FF' />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'Notifications',
+                            },
+                        })}
+                    >
                         <MaterialIcons name="notifications" size={25} color='#B3A0FF' />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'ProfileMenu',
+                            },
+                        })}
+                    >
                         <FontAwesome name="user" size={24} color='#B3A0FF' />
                     </TouchableOpacity>
                 </View>
@@ -39,32 +57,67 @@ export default function HomeScreen() {
                 </Text>
             </View>
             <View className='w-full flex-row justify-between items-center mb-[5px] px-[30px]'>
-                <View className='flex items-center p-[20px]'>
+                <TouchableOpacity className='flex items-center p-[20px]' 
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'Workout',
+                        },
+                    })}
+                >
                     <Dumbbell size={40} color='#B3A0FF' />
                     <Text className='text-lightPurple text-[12px] mt-[5px]'>Workout</Text>
-                </View>
+                </TouchableOpacity >
                 <View className='h-[60px] border-l border-[#B3A0FF]' />
-                <View className='flex items-center p-[20px]'>
+                <TouchableOpacity  className='flex items-center p-[20px]'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'ProgressTracking',
+                        },
+                    })}
+                >
                     <FontAwesome5 name="clipboard-list" size={40} color='#B3A0FF' />
                     <Text className='text-lightPurple text-[12px] mt-[5px]'>Progress{'\n'}Tracking</Text>
-                </View>
+                </TouchableOpacity >
                 <View className='h-[60px] border-l border-[#B3A0FF]' />
-                <View className='flex items-center p-[20px]'>
+                <TouchableOpacity  className='flex items-center p-[20px]'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'Nutrition',
+                        },
+                    })}
+                >
                     <Ionicons name="nutrition" size={40} color='#B3A0FF' />
                     <Text className='text-lightPurple text-[12px] mt-[5px]'>Nutrition</Text>
-                </View>
+                </TouchableOpacity >
                 <View className='h-[60px] border-l border-[#B3A0FF]' />
-                <View className='flex items-center p-[20px]'>
+                <TouchableOpacity  className='flex items-center p-[20px]'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'Community',
+                        },
+                    })}
+                >
                     <FontAwesome name="group" size={40} color='#B3A0FF' />
                     <Text className='text-lightPurple text-[12px] mt-[5px]'>Community</Text>
-                </View>
+                </TouchableOpacity >
             </View>
             <ScrollView>
                 <View className='flex-row w-full px-[30px] justify-between items-center mb-[10px]'>
                     <Text className='text-[15px] text-limeGreen'>
                         Recommendations
                     </Text>
-                    <TouchableOpacity className='flex-row'>
+                    <TouchableOpacity className='flex-row'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'RecommendationsMain',
+                            },
+                        })}
+                    >
                         <Text className='text-[12px] text-white mr-[5px]'>
                             See All
                         </Text>
@@ -156,10 +209,23 @@ export default function HomeScreen() {
                         </View>
                     </View>
                 </View>
-                <View className='flex-row w-full px-[30px] items-center mb-[10px]'>
+                <View className='flex-row w-full px-[30px] justify-between items-center mb-[10px]'>
                     <Text className='text-[15px] text-limeGreen'>
-                        Articles & Tips
+                        Articles and Tips
                     </Text>
+                    <TouchableOpacity className='flex-row'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'ResourcesMain',
+                            },
+                        })}
+                    >
+                        <Text className='text-[12px] text-white mr-[5px]'>
+                            See All
+                        </Text>
+                        <ChevronRight size={20} color={'#E2F163'} />
+                    </TouchableOpacity>
                 </View>
                 <View className='flex-row w-full px-[30px] justify-between mb-[20px]'>
                     <View className="w-[48%]"
