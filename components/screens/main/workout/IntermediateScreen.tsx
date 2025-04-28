@@ -6,12 +6,66 @@ import { ChevronLeft } from 'lucide-react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function IntermediateScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
+    const round1 = [
+        { 
+          id: 1,
+          title: "Kettlebell Swing",
+          time: "00:30",
+          repetition: "3x",
+          bgColor: "bg-lightPurple",
+        },
+        { 
+          id: 2,
+          title: "Shoulder Press",
+          time: "00:15",
+          repetition: "2x",
+          bgColor: "bg-limeGreen",
+        },
+        { 
+          id: 3,
+          title: "Hamstring Curls",
+          time: "00:30",
+          repetition: "3x",
+          bgColor: "bg-limeGreen",
+        },
+    ];
+
+    const round2 = [
+        { 
+          id: 1,
+          title: "Bicep Curls",
+          time: "00:10",
+          repetition: "2x",
+          bgColor: "bg-lightPurple",
+        },
+        { 
+          id: 2,
+          title: "Barbell Deadlift",
+          time: "00:15",
+          repetition: "4x",
+          bgColor: "bg-limeGreen",
+        },
+    ];
+
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'Workout',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Intermediate
@@ -70,110 +124,66 @@ export default function IntermediateScreen() {
 
                 <View className='w-full px-[30px] mt-[20px]'>
                     <Text className="text-limeGreen text-[20px] mb-[15px]">Round 1</Text>
-                    <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
-                        <View className="w-[45px] h-[45px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[10px]">
-                            <FontAwesome5 name="play" size={22} color="white" />
-                        </View>
-                        <View className='flex-col w-[50%]'>
-                            <Text className='text-[13px] text-black font-bold'>
-                                Kettlebell Swing
-                            </Text>
-                            <View className="flex-row items-center">
-                                <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
-                                <Text className="text-lightPurple text-[12px] ml-1">00:30</Text>
+                    {round1.map((item) => (
+                        <TouchableOpacity
+                            key={item.id}
+                            className="w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]"
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'WorkoutIntermediateRoutine',
+                                },
+                            })}
+                        >
+                            <View className={`w-[45px] h-[45px] rounded-full ${item.bgColor} items-center justify-center p-[5px] mr-[10px]`}>
+                                <FontAwesome5 name="play" size={22} color="white" />
                             </View>
-                        </View>
-                        <View className='flex-col w-[40%] justify-end'>
-                            <Text className='text-[13px] text-lightPurple font-bold'>
-                                Repetition 3x
-                            </Text>
-                        </View>
-                        
-                    </View>
-                    <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
-                        <View className="w-[45px] h-[45px] rounded-full bg-limeGreen items-center justify-center p-[5px] mr-[10px]">
-                            <FontAwesome5 name="play" size={22} color="white" />
-                        </View>
-                        <View className='flex-col w-[50%]'>
-                            <Text className='text-[13px] text-black font-bold'>
-                                Shoulder Press
-                            </Text>
-                            <View className="flex-row items-center">
-                                <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
-                                <Text className="text-lightPurple text-[12px] ml-1">00:15</Text>
+                            <View className="flex-col w-[50%]">
+                                <Text className="text-[13px] text-black font-bold">{item.title}</Text>
+                                <View className="flex-row items-center">
+                                    <MaterialCommunityIcons name="clock-time-eight" size={15} color="#B3A0FF" />
+                                    <Text className="text-lightPurple text-[12px] ml-1">{item.time}</Text>
+                                </View>
                             </View>
-                        </View>
-                        <View className='flex-col w-[40%] justify-end'>
-                            <Text className='text-[13px] text-lightPurple font-bold'>
-                                Repetition 2x
-                            </Text>
-                        </View>
-                        
-                    </View>
-                    <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
-                        <View className="w-[45px] h-[45px] rounded-full bg-limeGreen items-center justify-center p-[5px] mr-[10px]">
-                            <FontAwesome5 name="play" size={22} color="white" />
-                        </View>
-                        <View className='flex-col w-[50%]'>
-                            <Text className='text-[13px] text-black font-bold'>
-                                Hamstring Curls
-                            </Text>
-                            <View className="flex-row items-center">
-                                <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
-                                <Text className="text-lightPurple text-[12px] ml-1">00:30</Text>
+                            <View className="flex-col w-[40%] justify-end">
+                                <Text className="text-[13px] text-lightPurple font-bold">
+                                    Repetition {item.repetition}
+                                </Text>
                             </View>
-                        </View>
-                        <View className='flex-col w-[40%] justify-end'>
-                            <Text className='text-[13px] text-lightPurple font-bold'>
-                                Repetition 3x
-                            </Text>
-                        </View>
-                        
-                    </View>
+                        </TouchableOpacity>
+                    ))}
                 </View>
 
                 <View className='w-full px-[30px] mt-[20px]'>
                     <Text className="text-limeGreen text-[20px] mb-[15px]">Round 2</Text>
-                    <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
-                        <View className="w-[45px] h-[45px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[10px]">
-                            <FontAwesome5 name="play" size={22} color="white" />
-                        </View>
-                        <View className='flex-col w-[50%]'>
-                            <Text className='text-[13px] text-black font-bold'>
-                                Bicep Curls
-                            </Text>
-                            <View className="flex-row items-center">
-                                <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
-                                <Text className="text-lightPurple text-[12px] ml-1">00:10</Text>
+                    {round2.map((item) => (
+                        <TouchableOpacity
+                            key={item.id}
+                            className="w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]"
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'WorkoutIntermediateRoutine',
+                                },
+                            })}
+                        >
+                            <View className={`w-[45px] h-[45px] rounded-full ${item.bgColor} items-center justify-center p-[5px] mr-[10px]`}>
+                                <FontAwesome5 name="play" size={22} color="white" />
                             </View>
-                        </View>
-                        <View className='flex-col w-[40%] justify-end'>
-                            <Text className='text-[13px] text-lightPurple font-bold'>
-                                Repetition 2x
-                            </Text>
-                        </View>
-                        
-                    </View>
-                    <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
-                        <View className="w-[45px] h-[45px] rounded-full bg-limeGreen items-center justify-center p-[5px] mr-[10px]">
-                            <FontAwesome5 name="play" size={22} color="white" />
-                        </View>
-                        <View className='flex-col w-[50%]'>
-                            <Text className='text-[13px] text-black font-bold'>
-                                Barbell Deadlift
-                            </Text>
-                            <View className="flex-row items-center">
-                                <MaterialCommunityIcons name="clock-time-eight" size={15} color='#B3A0FF' />
-                                <Text className="text-lightPurple text-[12px] ml-1">00:15</Text>
+                            <View className="flex-col w-[50%]">
+                                <Text className="text-[13px] text-black font-bold">{item.title}</Text>
+                                <View className="flex-row items-center">
+                                    <MaterialCommunityIcons name="clock-time-eight" size={15} color="#B3A0FF" />
+                                    <Text className="text-lightPurple text-[12px] ml-1">{item.time}</Text>
+                                </View>
                             </View>
-                        </View>
-                        <View className='flex-col w-[40%] justify-end'>
-                            <Text className='text-[13px] text-lightPurple font-bold'>
-                                Repetition 4x
-                            </Text>
-                        </View>
-                        
-                    </View>
+                            <View className="flex-col w-[40%] justify-end">
+                                <Text className="text-[13px] text-lightPurple font-bold">
+                                    Repetition {item.repetition}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    ))}
                 </View>
             </ScrollView>
         </View>

@@ -6,14 +6,26 @@ import { ChevronLeft } from 'lucide-react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function WorkoutScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const [selectedMode, setSelectedMode] = useState('Beginner');
 
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'HomeMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Workout
@@ -52,7 +64,14 @@ export default function WorkoutScreen() {
                     selectedMode === 'Beginner' ? (
                         <>
                             <View className='w-full p-[30px] bg-lightPurple items-center'>
-                                <View className="bg-black w-full h-[200px] rounded-[20px] overflow-hidden">
+                                <TouchableOpacity className="bg-black w-full h-[200px] rounded-[20px] overflow-hidden"
+                                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                        screen: 'User',
+                                        params: {
+                                            screen: 'WorkoutBeginnerMain',
+                                        },
+                                    })}
+                                >
                                     {/* Workout Image */}
                                     <View className="relative">
                                         <Image
@@ -92,7 +111,7 @@ export default function WorkoutScreen() {
                                             </View>
                                         </View>
                                     </View>
-                                </View>
+                                </TouchableOpacity>
                             </View>
                             <View className='w-full p-[30px] mb-[20px]'>
                                 <Text className="text-limeGreen text-[20px] mb-[5px]">Let's Go Beginner</Text>
@@ -182,7 +201,14 @@ export default function WorkoutScreen() {
                     ) : selectedMode === 'Intermediate' ? (
                         <>
                             <View className='w-full p-[30px] bg-lightPurple items-center'>
-                                <View className="bg-black w-full h-[200px] rounded-[20px] overflow-hidden">
+                                <TouchableOpacity className="bg-black w-full h-[200px] rounded-[20px] overflow-hidden"
+                                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                        screen: 'User',
+                                        params: {
+                                            screen: 'WorkoutIntermediateMain',
+                                        },
+                                    })}
+                                >
                                     {/* Workout Image */}
                                     <View className="relative">
                                         <Image
@@ -222,7 +248,7 @@ export default function WorkoutScreen() {
                                             </View>
                                         </View>
                                     </View>
-                                </View>
+                                </TouchableOpacity>
                             </View>
                             <View className='w-full p-[30px] mb-[20px]'>
                                 <Text className="text-limeGreen text-[20px] mb-[5px]">Keep Raising Your Level</Text>
@@ -312,7 +338,14 @@ export default function WorkoutScreen() {
                     )  : selectedMode === 'Advanced' ? (
                         <>
                             <View className='w-full p-[30px] bg-lightPurple items-center'>
-                                <View className="bg-black w-full h-[200px] rounded-[20px] overflow-hidden">
+                                <TouchableOpacity className="bg-black w-full h-[200px] rounded-[20px] overflow-hidden"
+                                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                        screen: 'User',
+                                        params: {
+                                            screen: 'WorkoutAdvancedMain',
+                                        },
+                                    })}
+                                >
                                     {/* Workout Image */}
                                     <View className="relative">
                                         <Image
@@ -352,7 +385,7 @@ export default function WorkoutScreen() {
                                             </View>
                                         </View>
                                     </View>
-                                </View>
+                                </TouchableOpacity>
                             </View>
                             <View className='w-full p-[30px] mb-[20px]'>
                                 <Text className="text-limeGreen text-[20px] mb-[5px]">Unlock Your Potential</Text>
