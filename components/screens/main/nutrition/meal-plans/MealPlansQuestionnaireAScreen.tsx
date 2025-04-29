@@ -3,9 +3,17 @@ import { Button, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, Touc
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { ChevronLeft } from 'lucide-react-native';
+
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
+
 import ButtonText from '@/components/shared/ButtonText';
 
 export default function MealPlansQuestionnaireAScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
+
     const [selectedDiet, setSelectedDiet] = useState('');
     const [selectedAllergy, setSelectedAllergy] = useState('');
     const [selectedMealType, setSelectedMealType] = useState('');
@@ -37,7 +45,14 @@ export default function MealPlansQuestionnaireAScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[30px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'MealPlansMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Meal Plans
@@ -197,7 +212,13 @@ export default function MealPlansQuestionnaireAScreen() {
                     </View>
                     
                     <View className='w-full items-center mt-[60px]'>
-                        <ButtonText buttonText='Next' onClick={() => {}}/>
+                        <ButtonText buttonText='Next' onClick={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'MealPlansQuestionnaireB',
+                                },
+                            })}
+                        />
                     </View>
                 </View>
             </ScrollView>

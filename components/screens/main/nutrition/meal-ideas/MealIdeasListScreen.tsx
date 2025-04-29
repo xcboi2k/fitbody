@@ -6,14 +6,26 @@ import { ChevronLeft } from 'lucide-react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function MealIdeasListScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const [selected, setSelected] = useState('Breakfast');
 
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'MealIdeasMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Meal Ideas
@@ -90,8 +102,14 @@ export default function MealIdeasListScreen() {
                 <View className='w-full px-[30px] mb-[20px]'>
                     <Text className="text-limeGreen text-[20px] mb-[5px]">Recommended</Text>
                     <View className='flex-row w-full justify-between items-center'>
-                        <View className="w-[48%] border border-white rounded-[12px] p-2"
+                        <TouchableOpacity className="w-[48%] border border-white rounded-[12px] p-2"
                             // key={bookmark.id}
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'MealIdeasDetails',
+                                },
+                            })}
                         >
                             {/* Event Image */}
                             <View className="relative">
@@ -122,9 +140,15 @@ export default function MealIdeasListScreen() {
                                     </View>
                                 </View>
                             </View>
-                        </View>
-                        <View className="w-[48%] border border-white rounded-[12px] p-2"
+                        </TouchableOpacity>
+                        <TouchableOpacity className="w-[48%] border border-white rounded-[12px] p-2"
                             // key={bookmark.id}
+                            onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                screen: 'User',
+                                params: {
+                                    screen: 'MealIdeasDetails',
+                                },
+                            })}
                         >
                             {/* Event Image */}
                             <View className="relative">
@@ -155,7 +179,7 @@ export default function MealIdeasListScreen() {
                                     </View>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
