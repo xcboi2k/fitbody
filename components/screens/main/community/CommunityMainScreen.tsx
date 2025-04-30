@@ -5,8 +5,13 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { ChevronLeft } from 'lucide-react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function CommunityMainScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const [selected, setSelected] = useState('Discussion Forum');
 
     const strengthTrainingDiscussions = [
@@ -68,7 +73,14 @@ export default function CommunityMainScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'HomeMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Community
@@ -145,7 +157,14 @@ export default function CommunityMainScreen() {
                                             <View className='w-full flex-col border-b border-white mb-[10px]' key={index}>
                                                 <View className='w-full flex flex-row justify-between'>
                                                     <Text className="text-white text-[14px] font-bold">{item.title}</Text>
-                                                    <TouchableOpacity>
+                                                    <TouchableOpacity
+                                                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                                            screen: 'User',
+                                                            params: {
+                                                                screen: 'CommunityDiscussion',
+                                                            },
+                                                        })}
+                                                    >
                                                         <Text className="text-white text-[14px] font-bold text-right ml-auto">See All</Text>
                                                     </TouchableOpacity>
                                                 </View>
@@ -163,8 +182,14 @@ export default function CommunityMainScreen() {
                         <View className='w-full px-[30px] mb-[20px]'>
                             <Text className="text-limeGreen text-[20px] mb-[10px]">Challenges and Competitions</Text>
                             {fitnessChallenges.map((challenge) => (
-                                <View className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
+                                <TouchableOpacity className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
                                     key={challenge.id}
+                                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                        screen: 'User',
+                                        params: {
+                                            screen: 'ChallengesMain',
+                                        },
+                                    })}
                                 >
                                     <View className="w-[50%] px-[15px] py-[10px] items-center justify-center">
                                         <View className='flex-row justify-between items-start mb-[5px] w-full'>
@@ -180,7 +205,7 @@ export default function CommunityMainScreen() {
                                             className="h-40 w-full rounded-[20px] p-0"
                                         />
                                     </View>
-                                </View>
+                                </TouchableOpacity>
                             ))}
                         </View>
                     )

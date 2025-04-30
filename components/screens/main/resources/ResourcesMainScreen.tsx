@@ -4,8 +4,13 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { ChevronLeft } from 'lucide-react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function ResourcesMainScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const [selected, setSelected] = useState('Articles');
 
     const fitnessArticles = [
@@ -39,7 +44,14 @@ export default function ResourcesMainScreen() {
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'HomeMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Resources
@@ -75,8 +87,14 @@ export default function ResourcesMainScreen() {
                         <View className='w-full px-[30px] mb-[20px]'>
                             <Text className="text-limeGreen text-[20px] mb-[10px]">Challenges and Competitions</Text>
                             {fitnessArticles.map((article) => (
-                                <View className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
+                                <TouchableOpacity className="w-full bg-white rounded-[20px] flex-row mb-[20px]"
                                     key={article.id}
+                                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                        screen: 'User',
+                                        params: {
+                                            screen: 'ResourcesDetails',
+                                        },
+                                    })}
                                 >
                                     <View className="w-[50%] px-[15px] py-[10px] items-center justify-center">
                                         <View className='flex-row justify-between items-start mb-[5px] w-full'>
@@ -95,7 +113,7 @@ export default function ResourcesMainScreen() {
                                             <AntDesign name="star" size={24} color="#E2F163" />
                                         </View>
                                     </View>
-                                </View>
+                                </TouchableOpacity>
                             ))}
                         </View>
                     )

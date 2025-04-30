@@ -5,12 +5,24 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { ChevronLeft } from 'lucide-react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 export default function WeeklyChallengesScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'ChallengesMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Weekly Challenge
@@ -64,7 +76,14 @@ export default function WeeklyChallengesScreen() {
 
                 <View className='w-full px-[30px] mt-[20px]'>
                     <Text className="text-limeGreen text-[20px] mb-[15px]">Round 1</Text>
-                    <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
+                    <TouchableOpacity className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'WeeklyChallengeDetails',
+                            },
+                        })}
+                    >
                         <View className="w-[45px] h-[45px] rounded-full bg-lightPurple items-center justify-center p-[5px] mr-[10px]">
                             <FontAwesome5 name="play" size={22} color="white" />
                         </View>
@@ -83,7 +102,7 @@ export default function WeeklyChallengesScreen() {
                             </Text>
                         </View>
                         
-                    </View>
+                    </TouchableOpacity>
                     <View className='w-full flex flex-row items-center mb-[10px] bg-white rounded-[36px] p-[10px]'>
                         <View className="w-[45px] h-[45px] rounded-full bg-limeGreen items-center justify-center p-[5px] mr-[10px]">
                             <FontAwesome5 name="play" size={22} color="white" />

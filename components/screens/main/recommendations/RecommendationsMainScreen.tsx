@@ -7,6 +7,10 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { NestedParamList, RootStackParamList } from '@/types/navigation';
 
 interface Workout {
     id: number;
@@ -31,12 +35,20 @@ const chunkArray = <T,>(arr: T[], size: number): T[][] => {
 };
 
 export default function RecommendationsMainScreen() {
+    const navigation = useNavigation<NativeStackNavigationProp<NestedParamList>>()
     const workoutPairs: Workout[][] = chunkArray(workouts, 2); // Split into pairs
 
     return (
         <View className='flex-1 items-center bg-black'>
             <View className='flex-row w-full px-[30px] justify-between items-center mt-[50px] mb-[20px]'>
-                <TouchableOpacity className='flex-row items-center'>
+                <TouchableOpacity className='flex-row items-center'
+                    onPress={() => navigation.navigate('AuthenticatedScreens', {
+                        screen: 'User',
+                        params: {
+                            screen: 'HomeMain',
+                        },
+                    })}
+                >
                     <ChevronLeft size={20} color={'#E2F163'} />
                     <Text className='text-[20px] font-bold text-lightPurple ml-[5px]'>
                         Recommendations
@@ -51,7 +63,14 @@ export default function RecommendationsMainScreen() {
 
             <ScrollView className='w-full mb-[15px]'>
                 <View className='w-full p-[30px] bg-lightPurple items-center mb-[20px]'>
-                    <View className="bg-black w-full h-[310px] rounded-[20px] overflow-hidden">
+                    <TouchableOpacity className="bg-black w-full h-[310px] rounded-[20px] overflow-hidden"
+                        onPress={() => navigation.navigate('AuthenticatedScreens', {
+                            screen: 'User',
+                            params: {
+                                screen: 'RecommendationsDetails',
+                            },
+                        })}
+                    >
                         {/* Workout Image */}
                         <View className="relative">
                             <Image
@@ -89,7 +108,7 @@ export default function RecommendationsMainScreen() {
                                 </View>
                             </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View className='w-full px-[30px]'>
@@ -114,9 +133,16 @@ export default function RecommendationsMainScreen() {
                                             <Text className="text-limeGreen text-[16px]">{workout.name}</Text>
 
                                             {/* Status Icon (Check or Plus) */}
-                                            <View className={`w-[20px] h-[20px] rounded-full bg-lightPurple items-center justify-center`}>
+                                            <TouchableOpacity className={`w-[20px] h-[20px] rounded-full bg-lightPurple items-center justify-center`}
+                                                onPress={() => navigation.navigate('AuthenticatedScreens', {
+                                                    screen: 'User',
+                                                    params: {
+                                                        screen: 'RecommendationsDetails',
+                                                    },
+                                                })}
+                                            >
                                                 <FontAwesome6 name="play" size={10} color="white" />
-                                            </View>
+                                            </TouchableOpacity>
                                         </View>
 
                                         <View className="flex-row items-center justify-between mt-2">
