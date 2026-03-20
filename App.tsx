@@ -1,22 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
-import "./global.css"
+import { StyleSheet, Text, View } from 'react-native'
+import './global.css'
 
-import SupportChatScreen from './components/screens/main/profile/SupportChatScreen';
-import HeightScreen from './components/screens/set-up/HeightScreen';
-import GoalScreen from './components/screens/set-up/GoalScreen';
-import ActivityLevelScreen from './components/screens/set-up/ActivityLevelScreen';
-import MainApp from './components/MainApp';
-import SetProfileScreen from './components/screens/set-up/SetProfileScreen';
-import HelpDetailsScreen from './components/screens/main/profile/HelpDetailsScreen';
+import SupportChatScreen from './components/screens/main/profile/SupportChatScreen'
+import HeightScreen from './components/screens/set-up/HeightScreen'
+import GoalScreen from './components/screens/set-up/GoalScreen'
+import ActivityLevelScreen from './components/screens/set-up/ActivityLevelScreen'
+import MainApp from './components/MainApp'
+import SetProfileScreen from './components/screens/set-up/SetProfileScreen'
+import HelpDetailsScreen from './components/screens/main/profile/HelpDetailsScreen'
+import HomeScreen from './components/screens/main/HomeScreen'
 
 export default function App() {
-  return (
-    <>
-      <StatusBar/>
-      <MainApp />
-    </>
-  );
+    return (
+        <>
+            <StatusBar />
+            <MainApp />
+        </>
+    )
 }
-
